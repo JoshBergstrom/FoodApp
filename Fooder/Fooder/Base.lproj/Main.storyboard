@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Fooder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -91,7 +91,7 @@
         <!--View Controller-->
         <scene sceneID="7Qh-JS-4ZX">
             <objects>
-                <viewController id="WwQ-ZQ-tEw" sceneMemberID="viewController">
+                <viewController id="WwQ-ZQ-tEw" customClass="ViewController" customModule="Fooder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JRf-Tr-yuW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -122,10 +122,6 @@
                                 <rect key="frame" x="16" y="118" width="343" height="428"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WBq-7m-q0z">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="346"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Yelp_trademark_RGB_outline.png" translatesAutoresizingMaskIntoConstraints="NO" id="suS-r2-hTa">
                                         <rect key="frame" x="222" y="369" width="131" height="59"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -148,6 +144,10 @@
                                         <color key="textColor" red="1" green="0.0093617555430000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gDZ-y8-nuI">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="339"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.96505242586135864" green="0.98494499921798706" blue="0.98881083726882935" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -200,6 +200,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="fM3-ub-aPS"/>
                     </view>
+                    <connections>
+                        <outlet property="MainImage" destination="gDZ-y8-nuI" id="zlM-2V-wBm"/>
+                        <outlet property="RatingImage" destination="ugn-AS-HUs" id="1uC-vO-3WL"/>
+                        <outlet property="distanceLabel" destination="zdp-s8-7zn" id="IOV-DL-CDO"/>
+                        <outlet property="mainImage" destination="gDZ-y8-nuI" id="PfW-bd-a02"/>
+                        <outlet property="storeName" destination="aNd-9m-wbW" id="lom-KV-Byj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="49X-yI-aDA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -14,7 +14,6 @@
 		0315086F2107BAA3001F0C1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0315086D2107BAA3001F0C1E /* LaunchScreen.storyboard */; };
 		0315087A2107BAA4001F0C1E /* FooderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031508792107BAA4001F0C1E /* FooderTests.swift */; };
 		031508852107BAA4001F0C1E /* FooderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031508842107BAA4001F0C1E /* FooderUITests.swift */; };
-		036390C32108E65600A4CFB6 /* JSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036390C22108E65600A4CFB6 /* JSONManager.swift */; };
 		036390C62108EDC800A4CFB6 /* restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036390C52108EDC800A4CFB6 /* restaurant.swift */; };
 		03AD3A1B2107EA8A00ED2972 /* Yelp_trademark_RGB_outline.png in Resources */ = {isa = PBXBuildFile; fileRef = 03AD3A1A2107EA8A00ED2972 /* Yelp_trademark_RGB_outline.png */; };
 		03AD3A402107FCDF00ED2972 /* regular_0@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03AD3A222107FCDB00ED2972 /* regular_0@3x.png */; };
@@ -82,7 +81,6 @@
 		031508802107BAA4001F0C1E /* FooderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FooderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		031508842107BAA4001F0C1E /* FooderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooderUITests.swift; sourceTree = "<group>"; };
 		031508862107BAA4001F0C1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		036390C22108E65600A4CFB6 /* JSONManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONManager.swift; sourceTree = "<group>"; };
 		036390C52108EDC800A4CFB6 /* restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = restaurant.swift; sourceTree = "<group>"; };
 		03AD3A1A2107EA8A00ED2972 /* Yelp_trademark_RGB_outline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Yelp_trademark_RGB_outline.png; path = "../../../../../Downloads/YelpLogo_Trademark/Screen(R)/Yelp_trademark_RGB_outline.png"; sourceTree = "<group>"; };
 		03AD3A222107FCDB00ED2972 /* regular_0@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "regular_0@3x.png"; path = "../../../../../Downloads/yelp_stars/web_and_ios/regular/regular_0@3x.png"; sourceTree = "<group>"; };
@@ -253,7 +251,6 @@
 			isa = PBXGroup;
 			children = (
 				03AD3A5F2108E0AC00ED2972 /* NetworkManager.swift */,
-				036390C22108E65600A4CFB6 /* JSONManager.swift */,
 			);
 			path = "Network Services";
 			sourceTree = "<group>";
@@ -443,11 +440,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Fooder/Pods-Fooder-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,7 +481,6 @@
 			files = (
 				036390C62108EDC800A4CFB6 /* restaurant.swift in Sources */,
 				03AD3A602108E0AC00ED2972 /* NetworkManager.swift in Sources */,
-				036390C32108E65600A4CFB6 /* JSONManager.swift in Sources */,
 				031508672107BAA3001F0C1E /* ViewController.swift in Sources */,
 				031508652107BAA3001F0C1E /* AppDelegate.swift in Sources */,
 			);
