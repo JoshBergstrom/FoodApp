@@ -12,7 +12,7 @@
 import UIKit
 import SwiftyJSON
 import Alamofire
-
+import AlamofireImage
 
 class ViewController: UIViewController {
     var foodsearched = String()
