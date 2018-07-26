@@ -24,7 +24,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var storeName: UILabel!
     
-    var MainImageUrl = "https://s3-media2.fl.yelpcdn.com/bphoto/7AJax0lwL78aRorRGjvw8A/o.jpg"                                   //this will be used to find the image Update later
     var rating = Double() // this will be used for the rating image
     
     override func viewDidLoad() {
@@ -39,7 +38,34 @@ class ViewController: UIViewController {
                 if let value = response.result.value {
                     let json = JSON(value)
                     let restaurant = Restaurant(json: json)
+                    self.loadImage(urlString: restaurant.imageURL)
+                    self.rating = restaurant.rating
+                    self.storeName.text = restaurant.name
                     
+                    // checking the rating to set it to the right image
+                    if self.rating == 0 {
+                        self.RatingImage.image = #imageLiteral(resourceName: "regular_0.png")
+                    }; if self.rating == 1 {
+                        self.RatingImage.image = #imageLiteral(resourceName: "regular_1.png")
+                    }; if self.rating == 1.5 {
+                        self.RatingImage.image = #imageLiteral(resourceName: "regular_1_half.png")
+                    }; if self.rating == 2 {
+                        self.RatingImage.image = #imageLiteral(resourceName: "regular_2.png")
+                    };  if self.rating == 2.5 {
+                        self.RatingImage.image = #imageLiteral(resourceName: "regular_2_half.png")
+                    };  if self.rating == 3 {
+                        self.RatingImage.image = #imageLiteral(resourceName: "regular_3.png")
+                    };  if self.rating == 3.5 {
+                        self.RatingImage.image = #imageLiteral(resourceName: "regular_3_half.png")
+                    };  if self.rating == 4 {
+                        self.RatingImage.image = #imageLiteral(resourceName: "regular_4.png")
+                    };  if self.rating == 4.5 {
+                        self.RatingImage.image = #imageLiteral(resourceName: "regular_4_half.png")
+                    };  if self.rating == 5 {
+                        self.RatingImage.image = #imageLiteral(resourceName: "regular_5.png")
+                    }else {
+                        self.RatingImage.image = nil
+                    }
                     
                 }
             case .failure(let error):
@@ -51,6 +77,10 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    // updates main image
+    func loadImage(urlString: String) {
+        MainImage.af_setImage(withURL: URL(string: urlString)!)
     }
 
 }
