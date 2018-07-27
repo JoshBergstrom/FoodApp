@@ -15,32 +15,36 @@ import Alamofire
 import AlamofireImage
 
 class ViewController: UIViewController {
+    
+    //var's for api
     var foodsearched = String()
+    var zipcode = String()
+    var rating = Double() // this will be used for the rating image
     
-
-    
+    //IBOutlets
+    @IBOutlet weak var cost: UILabel!
     @IBOutlet weak var MainImage: UIImageView!
     @IBOutlet weak var RatingImage: UIImageView!
-    @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var storeName: UILabel!
+ 
     
-    var rating = Double() // this will be used for the rating image
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        // im connecting all the api info
-        let apiToContact = "https://api.yelp.com/v3/businesses/search?term=\(foodsearched)&latitude=37.786882&longitude=-122.399972"
+        // connecting to the api
+        let apiToContact = "https://api.yelp.com/v3/businesses/search?term=\(foodsearched)&location=\(zipcode)&open_now=true"
         Alamofire.request(apiToContact).validate().responseJSON() { response in
             switch response.result {
             case .success:
                 if let value = response.result.value {
                     let json = JSON(value)
-                    let restaurant = Restaurant(json: json)
+                    let restaurant = Restaurant(json: json) // make's my restaurant struct = the json
+                    //displaying all the info from json
                     self.loadImage(urlString: restaurant.imageURL)
                     self.rating = restaurant.rating
                     self.storeName.text = restaurant.name
+                    self.cost.text = restaurant.price
                     
                     // checking the rating to set it to the right image
                     if self.rating == 0 {
@@ -71,14 +75,15 @@ class ViewController: UIViewController {
             case .failure(let error):
                 print(error)
             }
-        
+
         }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    // updates main image
+    
+    // updates Mainimage IBOutlet
     func loadImage(urlString: String) {
         MainImage.af_setImage(withURL: URL(string: urlString)!)
     }
