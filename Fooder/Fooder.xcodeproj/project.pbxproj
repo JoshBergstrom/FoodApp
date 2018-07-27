@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		031508652107BAA3001F0C1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031508642107BAA3001F0C1E /* AppDelegate.swift */; };
-		031508672107BAA3001F0C1E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031508662107BAA3001F0C1E /* ViewController.swift */; };
+		031508672107BAA3001F0C1E /* TinderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031508662107BAA3001F0C1E /* TinderScreen.swift */; };
 		0315086A2107BAA3001F0C1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 031508682107BAA3001F0C1E /* Main.storyboard */; };
 		0315086C2107BAA3001F0C1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0315086B2107BAA3001F0C1E /* Assets.xcassets */; };
 		0315086F2107BAA3001F0C1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0315086D2107BAA3001F0C1E /* LaunchScreen.storyboard */; };
 		0315087A2107BAA4001F0C1E /* FooderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031508792107BAA4001F0C1E /* FooderTests.swift */; };
 		031508852107BAA4001F0C1E /* FooderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031508842107BAA4001F0C1E /* FooderUITests.swift */; };
+		03165911210B900C000C8CCA /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03165910210B900C000C8CCA /* HomeScreen.swift */; };
 		036390C62108EDC800A4CFB6 /* restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036390C52108EDC800A4CFB6 /* restaurant.swift */; };
 		03AD3A1B2107EA8A00ED2972 /* Yelp_trademark_RGB_outline.png in Resources */ = {isa = PBXBuildFile; fileRef = 03AD3A1A2107EA8A00ED2972 /* Yelp_trademark_RGB_outline.png */; };
 		03AD3A402107FCDF00ED2972 /* regular_0@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03AD3A222107FCDB00ED2972 /* regular_0@3x.png */; };
@@ -70,7 +71,7 @@
 /* Begin PBXFileReference section */
 		031508612107BAA3001F0C1E /* Fooder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fooder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		031508642107BAA3001F0C1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		031508662107BAA3001F0C1E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		031508662107BAA3001F0C1E /* TinderScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderScreen.swift; sourceTree = "<group>"; };
 		031508692107BAA3001F0C1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0315086B2107BAA3001F0C1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0315086E2107BAA3001F0C1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -81,6 +82,7 @@
 		031508802107BAA4001F0C1E /* FooderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FooderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		031508842107BAA4001F0C1E /* FooderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooderUITests.swift; sourceTree = "<group>"; };
 		031508862107BAA4001F0C1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03165910210B900C000C8CCA /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		036390C52108EDC800A4CFB6 /* restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = restaurant.swift; sourceTree = "<group>"; };
 		03AD3A1A2107EA8A00ED2972 /* Yelp_trademark_RGB_outline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Yelp_trademark_RGB_outline.png; path = "../../../../../Downloads/YelpLogo_Trademark/Screen(R)/Yelp_trademark_RGB_outline.png"; sourceTree = "<group>"; };
 		03AD3A222107FCDB00ED2972 /* regular_0@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "regular_0@3x.png"; path = "../../../../../Downloads/yelp_stars/web_and_ios/regular/regular_0@3x.png"; sourceTree = "<group>"; };
@@ -174,7 +176,8 @@
 				036390C42108EDAB00A4CFB6 /* classes  */,
 				03AD3A5E2108E09100ED2972 /* Network Services */,
 				031508642107BAA3001F0C1E /* AppDelegate.swift */,
-				031508662107BAA3001F0C1E /* ViewController.swift */,
+				031508662107BAA3001F0C1E /* TinderScreen.swift */,
+				03165910210B900C000C8CCA /* HomeScreen.swift */,
 				031508682107BAA3001F0C1E /* Main.storyboard */,
 				0315086B2107BAA3001F0C1E /* Assets.xcassets */,
 				0315086D2107BAA3001F0C1E /* LaunchScreen.storyboard */,
@@ -480,8 +483,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				036390C62108EDC800A4CFB6 /* restaurant.swift in Sources */,
+				03165911210B900C000C8CCA /* HomeScreen.swift in Sources */,
 				03AD3A602108E0AC00ED2972 /* NetworkManager.swift in Sources */,
-				031508672107BAA3001F0C1E /* ViewController.swift in Sources */,
+				031508672107BAA3001F0C1E /* TinderScreen.swift in Sources */,
 				031508652107BAA3001F0C1E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

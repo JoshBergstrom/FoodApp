@@ -17,9 +17,7 @@ import AlamofireImage
 class ViewController: UIViewController {
     
     //var's for api
-    var foodsearched = String()
-    var zipcode = String()
-    var rating = Double() // this will be used for the rating image
+    var rating: Double() // this will be used for the rating image
     
     //IBOutlets
     @IBOutlet weak var cost: UILabel!
@@ -33,7 +31,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // connecting to the api
-        let apiToContact = "https://api.yelp.com/v3/businesses/search?term=\(foodsearched)&location=\(zipcode)&open_now=true"
+        let apiToContact = "https://api.yelp.com/v3/businesses/search?term=\(foodSearched ?? "Pizza")&location=\(zipcode)&open_now=true"
         Alamofire.request(apiToContact).validate().responseJSON() { response in
             switch response.result {
             case .success:
