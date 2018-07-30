@@ -16,9 +16,16 @@ class HomeScreen: UIViewController {
 
     //IBOutlets
 
+    @IBAction func moveToTinderPage(_ sender: Any) {
+        performSegue(withIdentifier: "moveToTinderPage", sender: sender)
+    }
+    
     @IBAction func enterButtonClicked(_ sender: Any) {
         if self.searchBar.isFirstResponder{
             self.searchBar.resignFirstResponder()
+            foodSearched = searchBar.text
+            zipcode = usersZipcode.text
+            moveToTinderPage(sender)
         }
         guard let searchBar = self.searchBar.text else {return}
         foodSearched = searchBar
