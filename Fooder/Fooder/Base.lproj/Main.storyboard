@@ -97,8 +97,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <textInputTraits key="textInputTraits" keyboardType="webSearch" keyboardAppearance="alert"/>
                                 <connections>
+                                    <action selector="enterButtonClicked:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="BL3-lu-TaT"/>
                                     <action selector="enterButtonClicked:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="vjI-07-1cq"/>
-                                    <action selector="moveToTinderPage:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="G7n-zL-hV5"/>
                                 </connections>
                             </textField>
                         </subviews>
@@ -124,19 +124,10 @@
                     </view>
                     <connections>
                         <outlet property="searchBar" destination="jPK-tM-gIX" id="hJN-Py-1pj"/>
-                        <outlet property="searchDisplayController" destination="nea-zR-k9c" id="Xft-a0-B8b"/>
                         <outlet property="usersZipcode" destination="nyo-6z-Urz" id="b4q-GJ-2g8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="nea-zR-k9c">
-                    <connections>
-                        <outlet property="delegate" destination="BYZ-38-t0r" id="WRx-7E-Tj7"/>
-                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="bTU-DP-wZl"/>
-                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="2Ka-S7-VKY"/>
-                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="Ncu-Oz-ZoZ"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="135" y="132.5"/>
         </scene>

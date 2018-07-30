@@ -16,22 +16,18 @@ class HomeScreen: UIViewController {
 
     //IBOutlets
 
-    @IBAction func moveToTinderPage(_ sender: Any) {
-        performSegue(withIdentifier: "moveToTinderPage", sender: sender)
-    }
-    
+    @IBOutlet weak var searchBar: UITextField!
+    @IBOutlet weak var usersZipcode: ZipcodeTextField!    
     @IBAction func enterButtonClicked(_ sender: Any) {
         if self.searchBar.isFirstResponder{
             self.searchBar.resignFirstResponder()
             foodSearched = searchBar.text
             zipcode = usersZipcode.text
-            moveToTinderPage(sender)
         }
         guard let searchBar = self.searchBar.text else {return}
         foodSearched = searchBar
     }
-    @IBOutlet weak var searchBar: UITextField!
-    @IBOutlet weak var usersZipcode: ZipcodeTextField!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
