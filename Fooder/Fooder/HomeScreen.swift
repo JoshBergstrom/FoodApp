@@ -18,17 +18,9 @@ class HomeScreen: UIViewController {
 
     @IBOutlet weak var searchBar: UITextField!
     @IBOutlet weak var usersZipcode: ZipcodeTextField!    
-    @IBAction func enterButtonClicked(_ sender: Any) {
-        if self.searchBar.isFirstResponder{
-            self.searchBar.resignFirstResponder()
-            foodSearched = searchBar.text
-            zipcode = usersZipcode.text
-        }
-        guard let searchBar = self.searchBar.text else {return}
-        foodSearched = searchBar
-    }
 
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
