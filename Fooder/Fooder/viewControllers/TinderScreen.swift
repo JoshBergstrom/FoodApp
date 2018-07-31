@@ -27,11 +27,20 @@ class TinderScreen: UIViewController {
     @IBOutlet weak var RatingImage: UIImageView!
     @IBOutlet weak var storeName: UILabel!
     @IBOutlet weak var PageTitle: UILabel!
+    @IBOutlet weak var Xcard: UIView!
+    @IBOutlet weak var HeartCard: UIView!
+    @IBOutlet weak var CardView: UIView!
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        CardView.layer.cornerRadius = 10
+        CardView.layer.masksToBounds = true
+        Xcard.layer.cornerRadius = 40
+        Xcard.layer.masksToBounds = true
+        HeartCard.layer.cornerRadius = 40
+        HeartCard.layer.masksToBounds = true
         let foodToSearch = stringFormat(str: self.foodSearched!)
         let zipcodeToUse = stringFormat(str: self.zipCode!)
         print(zipcodeToUse)
