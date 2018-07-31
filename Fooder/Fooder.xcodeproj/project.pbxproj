@@ -15,7 +15,6 @@
 		0315087A2107BAA4001F0C1E /* FooderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031508792107BAA4001F0C1E /* FooderTests.swift */; };
 		031508852107BAA4001F0C1E /* FooderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031508842107BAA4001F0C1E /* FooderUITests.swift */; };
 		03165911210B900C000C8CCA /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03165910210B900C000C8CCA /* HomeScreen.swift */; };
-		03165913210B99E4000C8CCA /* ZipcodeKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03165912210B99E4000C8CCA /* ZipcodeKeyboard.swift */; };
 		036390C62108EDC800A4CFB6 /* restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036390C52108EDC800A4CFB6 /* restaurant.swift */; };
 		03AD3A1B2107EA8A00ED2972 /* Yelp_trademark_RGB_outline.png in Resources */ = {isa = PBXBuildFile; fileRef = 03AD3A1A2107EA8A00ED2972 /* Yelp_trademark_RGB_outline.png */; };
 		03AD3A402107FCDF00ED2972 /* regular_0@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03AD3A222107FCDB00ED2972 /* regular_0@3x.png */; };
@@ -48,7 +47,6 @@
 		03AD3A5B2107FCDF00ED2972 /* regular_1_half.png in Resources */ = {isa = PBXBuildFile; fileRef = 03AD3A3D2107FCDF00ED2972 /* regular_1_half.png */; };
 		03AD3A5C2107FCDF00ED2972 /* regular_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03AD3A3E2107FCDF00ED2972 /* regular_3@2x.png */; };
 		03AD3A5D2107FCDF00ED2972 /* regular_4_half@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03AD3A3F2107FCDF00ED2972 /* regular_4_half@2x.png */; };
-		03AD3A602108E0AC00ED2972 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AD3A5F2108E0AC00ED2972 /* NetworkManager.swift */; };
 		168996981700D4EF70E224B0 /* Pods_Fooder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A01D9A95FA9363D6B71CC76 /* Pods_Fooder.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,7 +82,6 @@
 		031508842107BAA4001F0C1E /* FooderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooderUITests.swift; sourceTree = "<group>"; };
 		031508862107BAA4001F0C1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03165910210B900C000C8CCA /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
-		03165912210B99E4000C8CCA /* ZipcodeKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipcodeKeyboard.swift; sourceTree = "<group>"; };
 		036390C52108EDC800A4CFB6 /* restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = restaurant.swift; sourceTree = "<group>"; };
 		03AD3A1A2107EA8A00ED2972 /* Yelp_trademark_RGB_outline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Yelp_trademark_RGB_outline.png; path = "../../../../../Downloads/YelpLogo_Trademark/Screen(R)/Yelp_trademark_RGB_outline.png"; sourceTree = "<group>"; };
 		03AD3A222107FCDB00ED2972 /* regular_0@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "regular_0@3x.png"; path = "../../../../../Downloads/yelp_stars/web_and_ios/regular/regular_0@3x.png"; sourceTree = "<group>"; };
@@ -117,7 +114,6 @@
 		03AD3A3D2107FCDF00ED2972 /* regular_1_half.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = regular_1_half.png; path = ../../../../../Downloads/yelp_stars/web_and_ios/regular/regular_1_half.png; sourceTree = "<group>"; };
 		03AD3A3E2107FCDF00ED2972 /* regular_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "regular_3@2x.png"; path = "../../../../../Downloads/yelp_stars/web_and_ios/regular/regular_3@2x.png"; sourceTree = "<group>"; };
 		03AD3A3F2107FCDF00ED2972 /* regular_4_half@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "regular_4_half@2x.png"; path = "../../../../../Downloads/yelp_stars/web_and_ios/regular/regular_4_half@2x.png"; sourceTree = "<group>"; };
-		03AD3A5F2108E0AC00ED2972 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		0A01D9A95FA9363D6B71CC76 /* Pods_Fooder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fooder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18C4450C1632C1CFC123B1FD /* Pods-Fooder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fooder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fooder/Pods-Fooder.debug.xcconfig"; sourceTree = "<group>"; };
 		8A0B591A07DE9D904D500002 /* Pods-Fooder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fooder.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fooder/Pods-Fooder.release.xcconfig"; sourceTree = "<group>"; };
@@ -176,10 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				036390C42108EDAB00A4CFB6 /* classes  */,
-				03AD3A5E2108E09100ED2972 /* Network Services */,
-				031508642107BAA3001F0C1E /* AppDelegate.swift */,
-				031508662107BAA3001F0C1E /* TinderScreen.swift */,
-				03165910210B900C000C8CCA /* HomeScreen.swift */,
+				03AD3A5E2108E09100ED2972 /* viewControllers */,
 				031508682107BAA3001F0C1E /* Main.storyboard */,
 				0315086B2107BAA3001F0C1E /* Assets.xcassets */,
 				0315086D2107BAA3001F0C1E /* LaunchScreen.storyboard */,
@@ -210,7 +203,6 @@
 			isa = PBXGroup;
 			children = (
 				036390C52108EDC800A4CFB6 /* restaurant.swift */,
-				03165912210B99E4000C8CCA /* ZipcodeKeyboard.swift */,
 			);
 			path = "classes ";
 			sourceTree = "<group>";
@@ -253,12 +245,14 @@
 			path = Photos;
 			sourceTree = "<group>";
 		};
-		03AD3A5E2108E09100ED2972 /* Network Services */ = {
+		03AD3A5E2108E09100ED2972 /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				03AD3A5F2108E0AC00ED2972 /* NetworkManager.swift */,
+				03165910210B900C000C8CCA /* HomeScreen.swift */,
+				031508662107BAA3001F0C1E /* TinderScreen.swift */,
+				031508642107BAA3001F0C1E /* AppDelegate.swift */,
 			);
-			path = "Network Services";
+			path = viewControllers;
 			sourceTree = "<group>";
 		};
 		7D1551A7B4AD70B6DCFE9D9F /* Frameworks */ = {
@@ -486,9 +480,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				036390C62108EDC800A4CFB6 /* restaurant.swift in Sources */,
-				03165913210B99E4000C8CCA /* ZipcodeKeyboard.swift in Sources */,
 				03165911210B900C000C8CCA /* HomeScreen.swift in Sources */,
-				03AD3A602108E0AC00ED2972 /* NetworkManager.swift in Sources */,
 				031508672107BAA3001F0C1E /* TinderScreen.swift in Sources */,
 				031508652107BAA3001F0C1E /* AppDelegate.swift in Sources */,
 			);
