@@ -7,26 +7,33 @@
 //
 
 import UIKit
+import CoreLocation
 
-// public var's
-//public var zipcode: String? = nil
+public var UserLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(37, 0 )
 
-class HomeScreen: UIViewController {
+
+class HomeScreen: UIViewController, CLLocationManagerDelegate {
     
     //IBOutlets
     
+    @IBOutlet weak var segment: UISegmentedControl!
     @IBOutlet weak var searchBar: UITextField!
-    @IBOutlet weak var usersZipcode: UITextField!
-    
-    // Fast search card views
-    
+    // card views
     @IBOutlet weak var BurgerCard: UIView!
     @IBOutlet weak var PizzaCard: UIView!
     @IBOutlet weak var TacoCard: UIView!
     @IBOutlet weak var BarCard: UIView!
     @IBOutlet weak var ChinaCard: UIView!
     @IBOutlet weak var PancakeCard: UIView!
+    //unwindSegue
+    @IBAction func unwindToHome(segue: UIStoryboardSegue){
+    }
     
+
+    
+    //vars
+    let manager = CLLocationManager()
+    var chosenDistance = 0
     
     func setupView() {
         BurgerCard.layer.cornerRadius = 50
@@ -43,7 +50,21 @@ class HomeScreen: UIViewController {
         ChinaCard.layer.masksToBounds = true
         
         
-
+        let selected: Int = segment.selectedSegmentIndex
+        let distance: Int
+        
+        switch selected {
+        case 0:
+            distance = 1609
+        case 1:
+            distance = 8046
+        case 2:
+            distance = 16093
+        default:
+            distance = 40000
+        }
+        
+        chosenDistance = distance
     }
     
     func search() {
@@ -56,7 +77,7 @@ class HomeScreen: UIViewController {
         if segue.identifier == "moveToTinder"{
             let tinderVC = segue.destination as! TinderScreen
             tinderVC.foodSearched = searchBar.text!
-            tinderVC.zipCode = usersZipcode.text!
+            tinderVC.Thedistance = chosenDistance
         }
     }
     
@@ -71,12 +92,33 @@ class HomeScreen: UIViewController {
     
     override func viewDidLoad() {
         setupView()
+        manager.requestWhenInUseAuthorization()
+        manager.delegate = self
+        manager.activityType = CLActivityType(rawValue: CLActivityType.RawValue(kCLLocationAccuracyNearestTenMeters))!
+        manager.startUpdatingLocation()
+        
+        //dismiss keyboard with tap
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
+        
+        
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        UserLocation = locations[0].coordinate
+        print(UserLocation)
+    }
+    
+    
+    
+
     
     
 }
