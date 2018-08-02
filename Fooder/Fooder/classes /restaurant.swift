@@ -19,14 +19,14 @@ struct Restaurant {
     let ID: String
     let price: String
     
-    init(json: JSON) {
-        self.name = json["businesses"][0]["name"].stringValue
-        self.imageURL = json["businesses"][0]["image_url"].stringValue
-        self.rating = json["businesses"][0]["rating"].doubleValue
-        self.categories = json["businesses"][0]["categories"]["title"].stringValue
-        self.address = json["businesses"][0]["display_address"].stringValue
-        self.ID = json["businesses"][0]["id"].stringValue
-        self.price = json["businesses"][0]["price"].stringValue
+    init(json: JSON, for index: Int) {
+        self.name = json["businesses"][index]["name"].stringValue
+        self.imageURL = json["businesses"][index]["image_url"].stringValue
+        self.rating = json["businesses"][index]["rating"].doubleValue
+        self.categories = json["businesses"][index]["categories"]["title"].stringValue
+        self.address = json["businesses"][index]["display_address"].stringValue
+        self.ID = json["businesses"][index]["id"].stringValue
+        self.price = json["businesses"][index]["price"].stringValue
     }
 }
 

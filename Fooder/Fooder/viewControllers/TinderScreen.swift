@@ -15,15 +15,17 @@ import Alamofire
 import AlamofireImage
 
 
-public var storeNumber: Int = 0
 public var currentStoreName = ""
+var restaurants: [Restaurant] = []
 
 class TinderScreen: UIViewController {
     
     //var's for api
     var rating = Double() // this will be used for the rating image
     var foodSearched: String?
-    var Thedistance: Int = 0 
+    var theDistance: Int = 1609
+    var thePrice: String = "1"
+    var storeNum: Int = 0
     
     
     //IBOutlets
@@ -65,7 +67,7 @@ class TinderScreen: UIViewController {
         self.view.addGestureRecognizer(swipeRight)
         
         //setting up Api
-        let urlstring = "https://api.yelp.com/v3/businesses/search?term=\(String((foodToSearch)))&latitude=\(UserLocation.latitude)&longitude=\(UserLocation.longitude)&open_now=true&radius=\(String(Thedistance))"
+        let urlstring = "https://api.yelp.com/v3/businesses/search?term=\(String((foodToSearch)))&latitude=\(UserLocation.latitude)&longitude=\(UserLocation.longitude)&open_now=true&radius=\(String(theDistance))&price=\(String(thePrice))"
         let url = URL(string: urlstring)
         var request = URLRequest(url: url!)
         request.httpMethod = "GET"
@@ -77,8 +79,12 @@ class TinderScreen: UIViewController {
             case .success:
                 
                 if let value = response.result.value {
-                    let json = JSON(value)
-                    let restaurant = Restaurant(json: json) // make's my restaurant struct = the json
+                    for store in 1...10 {
+                        let json = JSON(value)
+                        self.storeNum = store
+                        let restaurant = Restaurant(json: json, for: self.storeNum) // make's my restaurant struct = the json
+                        restaurants.append(restaurant)
+                    
                     //displaying all the info from json
                     
                     self.loadImage(urlString: restaurant.imageURL)
@@ -111,7 +117,7 @@ class TinderScreen: UIViewController {
                     }else {
                         self.RatingImage.image = nil
                     }
-                
+                    }
                 }
             case .failure(let error):
                 print(error)
@@ -157,15 +163,13 @@ class TinderScreen: UIViewController {
 //swipeAction
 extension UIViewController
 {
-    @objc func swipeAction(swipe:UISwipeGestureRecognizer)
+    @objc func swipeAction(swipe: UISwipeGestureRecognizer)
     {
         switch swipe.direction.rawValue {
         case 1:
             print("swipedright")
-            storeNumber += 1
-            if storeNumber < 10 {
-                
-            }
+            print(restaurants)
+          
         case 2:
             print("swipedLeft")
         default:

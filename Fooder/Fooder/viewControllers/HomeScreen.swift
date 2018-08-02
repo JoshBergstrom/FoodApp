@@ -16,7 +16,8 @@ class HomeScreen: UIViewController, CLLocationManagerDelegate {
     
     //IBOutlets
     
-    @IBOutlet weak var segment: UISegmentedControl!
+    @IBOutlet weak var DistanceSegment: UISegmentedControl!
+    @IBOutlet weak var PriceSegment: UISegmentedControl!
     @IBOutlet weak var searchBar: UITextField!
     // card views
     @IBOutlet weak var BurgerCard: UIView!
@@ -34,26 +35,27 @@ class HomeScreen: UIViewController, CLLocationManagerDelegate {
     //vars
     let manager = CLLocationManager()
     var chosenDistance = 0
+    var chosenPrice = "1"
     
     func setupView() {
-        BurgerCard.layer.cornerRadius = 50
+        BurgerCard.layer.cornerRadius = 45
         BurgerCard.layer.masksToBounds = true
-        PizzaCard.layer.cornerRadius = 50
+        PizzaCard.layer.cornerRadius = 45
         PizzaCard.layer.masksToBounds = true
-        TacoCard.layer.cornerRadius = 50
+        TacoCard.layer.cornerRadius = 45
         TacoCard.layer.masksToBounds = true
-        PancakeCard.layer.cornerRadius = 50
+        PancakeCard.layer.cornerRadius = 45
         PancakeCard.layer.masksToBounds = true
-        BarCard.layer.cornerRadius = 50
+        BarCard.layer.cornerRadius = 45
         BarCard.layer.masksToBounds = true
-        ChinaCard.layer.cornerRadius = 50
+        ChinaCard.layer.cornerRadius = 45
         ChinaCard.layer.masksToBounds = true
         
         
-        let selected: Int = segment.selectedSegmentIndex
+        let selectedDistance = DistanceSegment.selectedSegmentIndex
         let distance: Int
         
-        switch selected {
+        switch selectedDistance {
         case 0:
             distance = 1609
         case 1:
@@ -61,9 +63,24 @@ class HomeScreen: UIViewController, CLLocationManagerDelegate {
         case 2:
             distance = 16093
         default:
-            distance = 40000
+            distance = 1609
         }
         
+        let selectedPrice = PriceSegment.selectedSegmentIndex
+        let price: String
+        
+        switch selectedPrice {
+        case 1:
+            price = "1"
+        case 2:
+            price = "1, 2"
+        case 3:
+            price = "1, 2, 3"
+        default:
+            price = "1"
+            
+        }
+        chosenPrice = price
         chosenDistance = distance
     }
     
@@ -77,7 +94,8 @@ class HomeScreen: UIViewController, CLLocationManagerDelegate {
         if segue.identifier == "moveToTinder"{
             let tinderVC = segue.destination as! TinderScreen
             tinderVC.foodSearched = searchBar.text!
-            tinderVC.Thedistance = chosenDistance
+            tinderVC.theDistance = chosenDistance
+            tinderVC.thePrice = chosenPrice 
         }
     }
     
