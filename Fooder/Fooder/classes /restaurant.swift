@@ -14,6 +14,7 @@ struct Restaurant {
     let name: String
     let imageURL: String
     let rating: Double
+    let ratingImage: UIImage
     let categories: String
     let address: String
     let ID: String
@@ -27,6 +28,30 @@ struct Restaurant {
         self.address = json["businesses"][index]["display_address"].stringValue
         self.ID = json["businesses"][index]["id"].stringValue
         self.price = json["businesses"][index]["price"].stringValue
+        
+        if self.rating == 0 {
+            ratingImage = #imageLiteral(resourceName: "regular_0.png")
+        }else if self.rating == 1 {
+            ratingImage = #imageLiteral(resourceName: "regular_1.png")
+        }else if self.rating == 1.5 {
+            ratingImage = #imageLiteral(resourceName: "regular_1_half.png")
+        }else if self.rating == 2 {
+            ratingImage = #imageLiteral(resourceName: "regular_2.png")
+        }else if self.rating == 2.5 {
+            ratingImage = #imageLiteral(resourceName: "regular_2_half.png")
+        }else  if self.rating == 3 {
+            ratingImage = #imageLiteral(resourceName: "regular_3.png")
+        }else  if self.rating == 3.5 {
+            ratingImage = #imageLiteral(resourceName: "regular_3_half.png")
+        }else  if self.rating == 4 {
+            ratingImage = #imageLiteral(resourceName: "regular_4.png")
+        }else  if self.rating == 4.5 {
+            ratingImage = #imageLiteral(resourceName: "regular_4_half.png")
+        }else  if self.rating == 5 {
+            ratingImage = #imageLiteral(resourceName: "regular_5.png")
+        }else {
+            ratingImage = #imageLiteral(resourceName: "Yelp_trademark_RGB_outline.png")
+        }
     }
 }
 

@@ -94,29 +94,8 @@ class TinderScreen: UIViewController {
                     self.cost.text = restaurant.price
                     self.PageTitle.text = self.titleFormate(str: self.foodSearched!)
                     // checking the rating to set it to the right image
-                    if self.rating == 0 {
-                        self.RatingImage.image = #imageLiteral(resourceName: "regular_0.png")
-                    }else if self.rating == 1 {
-                        self.RatingImage.image = #imageLiteral(resourceName: "regular_1.png")
-                    }else if self.rating == 1.5 {
-                        self.RatingImage.image = #imageLiteral(resourceName: "regular_1_half.png")
-                    }else if self.rating == 2 {
-                        self.RatingImage.image = #imageLiteral(resourceName: "regular_2.png")
-                    }else if self.rating == 2.5 {
-                        self.RatingImage.image = #imageLiteral(resourceName: "regular_2_half.png")
-                    }else  if self.rating == 3 {
-                        self.RatingImage.image = #imageLiteral(resourceName: "regular_3.png")
-                    }else  if self.rating == 3.5 {
-                        self.RatingImage.image = #imageLiteral(resourceName: "regular_3_half.png")
-                    }else  if self.rating == 4 {
-                        self.RatingImage.image = #imageLiteral(resourceName: "regular_4.png")
-                    }else  if self.rating == 4.5 {
-                        self.RatingImage.image = #imageLiteral(resourceName: "regular_4_half.png")
-                    }else  if self.rating == 5 {
-                        self.RatingImage.image = #imageLiteral(resourceName: "regular_5.png")
-                    }else {
-                        self.RatingImage.image = nil
-                    }
+                   self.RatingImage.image = restaurant.ratingImage
+                        
                     }
                 }
             case .failure(let error):
