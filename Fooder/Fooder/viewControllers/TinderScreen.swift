@@ -8,17 +8,18 @@
 
 
 
-// view controller for the main tinder like page 
+// view controller for the main tinder like page
 import UIKit
 import SwiftyJSON
 import Alamofire
 import AlamofireImage
 
 
-public var currentStoreName = ""
-var restaurants: [Restaurant] = []
-
 class TinderScreen: UIViewController {
+    
+    var restaurants: [Restaurant] = []
+    
+    var storedRestaurants: [Restaurant] = []
     
     //var's for api
     var rating = Double() // this will be used for the rating image
@@ -42,9 +43,42 @@ class TinderScreen: UIViewController {
         self.performSegue(withIdentifier: "unwindToHome", sender: self)
     }
     
+    var currentlyVisibleRestaurant: Restaurant? {
+        get {
+            return restaurants.first
+        }
+    }
     
+    func updateUI()  {
+        //displaying all the info from json
+        if let currentlyVisibleRestaurant = self.currentlyVisibleRestaurant {
+            self.loadImage(urlString: currentlyVisibleRestaurant.imageURL)
+            self.rating = currentlyVisibleRestaurant.rating
+            self.storeName.text = currentlyVisibleRestaurant.name
+            self.cost.text = currentlyVisibleRestaurant.price
+            self.PageTitle.text = self.titleFormate(str: self.foodSearched!)
+            // checking the rating to set it to the right image
+            self.RatingImage.image = currentlyVisibleRestaurant.ratingImage
+        } else {
+            
+        }
+        
+    }
     
+    func storeCurrentRestaurant() {
+        guard let currentRestaurant = currentlyVisibleRestaurant else {
+            fatalError("there are no visible resutants when the user swiped right")
+        }
+        
+        storedRestaurants.append(currentRestaurant)
+        restaurants.removeFirst()
+        updateUI()
+    }
     
+    func removeCurrentRestaurant() {
+        restaurants.removeFirst()
+        updateUI()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,42 +100,47 @@ class TinderScreen: UIViewController {
         swipeRight.direction = UISwipeGestureRecognizerDirection.right
         self.view.addGestureRecognizer(swipeRight)
         
-        //setting up Api
-        let urlstring = "https://api.yelp.com/v3/businesses/search?term=\(String((foodToSearch)))&latitude=\(UserLocation.latitude)&longitude=\(UserLocation.longitude)&open_now=true&radius=\(String(theDistance))&price=\(String(thePrice))"
-        let url = URL(string: urlstring)
-        var request = URLRequest(url: url!)
-        request.httpMethod = "GET"
-        request.setValue("Bearer 9d2iFCXo2NMKtTufVByPDK0G6fS0dYLC2_59rRofz24M2kR6YDn_xILHpbXuWccjPAtlELNFp6RuynLpFjwYmciDarNIeJOGJqB_fxU7KaY6IfOYgIRvN2PkPlZXW3Yx", forHTTPHeaderField: "Authorization")
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        //          connecting to api
-        Alamofire.request(request).validate().responseJSON() { response in
-            switch response.result {
-            case .success:
-                
-                if let value = response.result.value {
-                    for store in 1...10 {
-                        let json = JSON(value)
-                        self.storeNum = store
-                        let restaurant = Restaurant(json: json, for: self.storeNum) // make's my restaurant struct = the json
-                        restaurants.append(restaurant)
-                    
-                    //displaying all the info from json
-                    
-                    self.loadImage(urlString: restaurant.imageURL)
-                    self.rating = restaurant.rating
-                    self.storeName.text = restaurant.name
-                    currentStoreName = self.storeName.text!
-                    self.cost.text = restaurant.price
-                    self.PageTitle.text = self.titleFormate(str: self.foodSearched!)
-                    // checking the rating to set it to the right image
-                   self.RatingImage.image = restaurant.ratingImage
-                        
-                    }
-                }
-            case .failure(let error):
-                print(error)
-            }
+        let myBlockOfCodeToCallWhenGetRestauntsIsDone: ([Restaurant]) -> () = { restaurantsFromYelp in
+            self.restaurants = restaurantsFromYelp
+            self.updateUI()
         }
+        YelpService.getRestarunts(foodToSearch: foodToSearch, theDistance: String(theDistance), thePrice: thePrice, completionHandler: myBlockOfCodeToCallWhenGetRestauntsIsDone)
+//
+//        //setting up Api
+//        let urlstring = "https://api.yelp.com/v3/businesses/search?term=\(String((foodToSearch)))&latitude=\(UserLocation.latitude)&longitude=\(UserLocation.longitude)&open_now=true&radius=\(String(theDistance))&price=\(String(thePrice))"
+//        let url = URL(string: urlstring)
+//        var request = URLRequest(url: url!)
+//        request.httpMethod = "GET"
+//        request.setValue("Bearer 9d2iFCXo2NMKtTufVByPDK0G6fS0dYLC2_59rRofz24M2kR6YDn_xILHpbXuWccjPAtlELNFp6RuynLpFjwYmciDarNIeJOGJqB_fxU7KaY6IfOYgIRvN2PkPlZXW3Yx", forHTTPHeaderField: "Authorization")
+//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//        //          connecting to api
+//        Alamofire.request(request).validate().responseJSON() { response in
+//            switch response.result {
+//            case .success:
+//
+//                if let value = response.result.value {
+//                    for store in 1...10 {
+//                        let json = JSON(value)
+//                        let restaurant = Restaurant(json: json, for: store) // make's my restaurant struct = the json
+//                        restaurants.append(restaurant)
+//
+//                        //displaying all the info from json
+//
+//                        self.loadImage(urlString: restaurant.imageURL)
+//                        self.rating = restaurant.rating
+//                        self.storeName.text = restaurant.name
+//                        currentStoreName = self.storeName.text!
+//                        self.cost.text = restaurant.price
+//                        self.PageTitle.text = self.titleFormate(str: self.foodSearched!)
+//                        // checking the rating to set it to the right image
+//                        self.RatingImage.image = restaurant.ratingImage
+//
+//                    }
+//                }
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -140,17 +179,15 @@ class TinderScreen: UIViewController {
 }
 
 //swipeAction
-extension UIViewController
+extension TinderScreen
 {
     @objc func swipeAction(swipe: UISwipeGestureRecognizer)
     {
         switch swipe.direction.rawValue {
         case 1:
-            print("swipedright")
-            print(restaurants)
-          
+            storeCurrentRestaurant()
         case 2:
-            print("swipedLeft")
+            removeCurrentRestaurant()
         default:
             break
         }
@@ -166,6 +203,7 @@ extension UIViewController {
         parent?.addSubview(view) // This line causes the view to be reloaded
     }
 }
+
 
 
 

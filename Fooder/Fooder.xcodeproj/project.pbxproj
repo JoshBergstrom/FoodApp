@@ -47,6 +47,7 @@
 		036006DC2110F965009BCE25 /* regular_3_half.png in Resources */ = {isa = PBXBuildFile; fileRef = 036006BE2110F965009BCE25 /* regular_3_half.png */; };
 		036006DF2110FA9B009BCE25 /* Yelp_trademark_RGB_outline.png in Resources */ = {isa = PBXBuildFile; fileRef = 036006DE2110FA9A009BCE25 /* Yelp_trademark_RGB_outline.png */; };
 		036390C62108EDC800A4CFB6 /* restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036390C52108EDC800A4CFB6 /* restaurant.swift */; };
+		03E52E1A2113A12D00BF9764 /* YelpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E52E192113A12D00BF9764 /* YelpService.swift */; };
 		168996981700D4EF70E224B0 /* Pods_Fooder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A01D9A95FA9363D6B71CC76 /* Pods_Fooder.framework */; };
 /* End PBXBuildFile section */
 
@@ -114,6 +115,7 @@
 		036006BE2110F965009BCE25 /* regular_3_half.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = regular_3_half.png; path = yelp/regular_3_half.png; sourceTree = SOURCE_ROOT; };
 		036006DE2110FA9A009BCE25 /* Yelp_trademark_RGB_outline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Yelp_trademark_RGB_outline.png; path = yelp/Yelp_trademark_RGB_outline.png; sourceTree = SOURCE_ROOT; };
 		036390C52108EDC800A4CFB6 /* restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = restaurant.swift; sourceTree = "<group>"; };
+		03E52E192113A12D00BF9764 /* YelpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpService.swift; sourceTree = "<group>"; };
 		0A01D9A95FA9363D6B71CC76 /* Pods_Fooder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fooder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18C4450C1632C1CFC123B1FD /* Pods-Fooder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fooder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fooder/Pods-Fooder.debug.xcconfig"; sourceTree = "<group>"; };
 		8A0B591A07DE9D904D500002 /* Pods-Fooder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fooder.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fooder/Pods-Fooder.release.xcconfig"; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 		031508632107BAA3001F0C1E /* Fooder */ = {
 			isa = PBXGroup;
 			children = (
+				03E52E182113A10400BF9764 /* Helpers */,
 				036390C42108EDAB00A4CFB6 /* classes  */,
 				03AD3A5E2108E09100ED2972 /* viewControllers */,
 				031508682107BAA3001F0C1E /* Main.storyboard */,
@@ -253,6 +256,14 @@
 				031508642107BAA3001F0C1E /* AppDelegate.swift */,
 			);
 			path = viewControllers;
+			sourceTree = "<group>";
+		};
+		03E52E182113A10400BF9764 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				03E52E192113A12D00BF9764 /* YelpService.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		7D1551A7B4AD70B6DCFE9D9F /* Frameworks */ = {
@@ -483,6 +494,7 @@
 				03165911210B900C000C8CCA /* HomeScreen.swift in Sources */,
 				031508672107BAA3001F0C1E /* TinderScreen.swift in Sources */,
 				031508652107BAA3001F0C1E /* AppDelegate.swift in Sources */,
+				03E52E1A2113A12D00BF9764 /* YelpService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

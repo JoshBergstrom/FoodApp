@@ -20,14 +20,14 @@ struct Restaurant {
     let ID: String
     let price: String
     
-    init(json: JSON, for index: Int) {
-        self.name = json["businesses"][index]["name"].stringValue
-        self.imageURL = json["businesses"][index]["image_url"].stringValue
-        self.rating = json["businesses"][index]["rating"].doubleValue
-        self.categories = json["businesses"][index]["categories"]["title"].stringValue
-        self.address = json["businesses"][index]["display_address"].stringValue
-        self.ID = json["businesses"][index]["id"].stringValue
-        self.price = json["businesses"][index]["price"].stringValue
+    init(json: JSON) {
+        self.name = json["name"].stringValue
+        self.imageURL = json["image_url"].stringValue
+        self.rating = json["rating"].doubleValue
+        self.categories = json["categories"]["title"].stringValue
+        self.address = json["display_address"].stringValue
+        self.ID = json["id"].stringValue
+        self.price = json["price"].stringValue
         
         if self.rating == 0 {
             ratingImage = #imageLiteral(resourceName: "regular_0.png")
