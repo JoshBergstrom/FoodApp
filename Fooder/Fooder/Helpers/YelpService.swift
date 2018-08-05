@@ -12,7 +12,7 @@ import SwiftyJSON
 
 
 struct YelpService {
-    
+ 
     static func getRestarunts(foodToSearch: String, theDistance: String, thePrice: String, completionHandler: @escaping ([Restaurant]) -> ()) {
         //setting up Api
         let urlstring = "https://api.yelp.com/v3/businesses/search?term=\(String((foodToSearch)))&latitude=\(UserLocation.latitude)&longitude=\(UserLocation.longitude)&open_now=true&radius=\(String(theDistance))&price=\(String(thePrice))"
@@ -25,7 +25,6 @@ struct YelpService {
         Alamofire.request(request).validate().responseJSON() { response in
             switch response.result {
             case .success:
-                
                 if let value = response.result.value {
                     let json = JSON(value)
                     let businessesJson = json["businesses"].arrayValue
@@ -35,7 +34,7 @@ struct YelpService {
                         let restaurant = Restaurant(json: businessJson) // make's my restaurant struct = the json
                         restaurants.append(restaurant)
                     }
-                    
+                
                     completionHandler(restaurants)
                 }
             case .failure(let error):

@@ -17,8 +17,11 @@ import AlamofireImage
 
 class TinderScreen: UIViewController {
     
+
+    // all restaurants 
     var restaurants: [Restaurant] = []
     
+    // liked restaurants
     var storedRestaurants: [Restaurant] = []
     
     //var's for api
@@ -27,7 +30,12 @@ class TinderScreen: UIViewController {
     var theDistance: Int = 1609
     var thePrice: String = "1"
     var storeNum: Int = 0
+
     
+//    var for status Bar
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     //IBOutlets
     @IBOutlet weak var MainImage: UIImageView!
@@ -49,6 +57,17 @@ class TinderScreen: UIViewController {
         }
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! TableViewController
+        destination.likedRestarunts = storedRestaurants
+        }
+    
+    
+    
+    
+    
+    
     func updateUI()  {
         //displaying all the info from json
         if let currentlyVisibleRestaurant = self.currentlyVisibleRestaurant {
@@ -60,7 +79,8 @@ class TinderScreen: UIViewController {
             // checking the rating to set it to the right image
             self.RatingImage.image = currentlyVisibleRestaurant.ratingImage
         } else {
-            
+            print(storedRestaurants.count)
+            performSegue(withIdentifier: "showCells", sender: self)
         }
         
     }
@@ -84,10 +104,16 @@ class TinderScreen: UIViewController {
         super.viewDidLoad()
         CardView.layer.cornerRadius = 20
         CardView.layer.masksToBounds = true
-        XCard.layer.cornerRadius = 40
+        CardView.layer.borderWidth = 1
+        CardView.layer.borderColor = UIColor.black.cgColor 
+        XCard.layer.cornerRadius = 45
         XCard.layer.masksToBounds = true
-        HeartCard.layer.cornerRadius = 40
+        HeartCard.layer.cornerRadius = 45
         HeartCard.layer.masksToBounds = true
+        XCard.layer.borderWidth = 1
+        XCard.layer.borderColor = UIColor.black.cgColor
+        HeartCard.layer.borderWidth = 1
+        HeartCard.layer.borderColor = UIColor.black.cgColor
         let foodToSearch = stringFormat(str: self.foodSearched!)
         
         
@@ -100,47 +126,12 @@ class TinderScreen: UIViewController {
         swipeRight.direction = UISwipeGestureRecognizerDirection.right
         self.view.addGestureRecognizer(swipeRight)
         
+        //myBlockOfCodeToCallWhenGetRestauntsIsDone
         let myBlockOfCodeToCallWhenGetRestauntsIsDone: ([Restaurant]) -> () = { restaurantsFromYelp in
             self.restaurants = restaurantsFromYelp
             self.updateUI()
         }
         YelpService.getRestarunts(foodToSearch: foodToSearch, theDistance: String(theDistance), thePrice: thePrice, completionHandler: myBlockOfCodeToCallWhenGetRestauntsIsDone)
-//
-//        //setting up Api
-//        let urlstring = "https://api.yelp.com/v3/businesses/search?term=\(String((foodToSearch)))&latitude=\(UserLocation.latitude)&longitude=\(UserLocation.longitude)&open_now=true&radius=\(String(theDistance))&price=\(String(thePrice))"
-//        let url = URL(string: urlstring)
-//        var request = URLRequest(url: url!)
-//        request.httpMethod = "GET"
-//        request.setValue("Bearer 9d2iFCXo2NMKtTufVByPDK0G6fS0dYLC2_59rRofz24M2kR6YDn_xILHpbXuWccjPAtlELNFp6RuynLpFjwYmciDarNIeJOGJqB_fxU7KaY6IfOYgIRvN2PkPlZXW3Yx", forHTTPHeaderField: "Authorization")
-//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-//        //          connecting to api
-//        Alamofire.request(request).validate().responseJSON() { response in
-//            switch response.result {
-//            case .success:
-//
-//                if let value = response.result.value {
-//                    for store in 1...10 {
-//                        let json = JSON(value)
-//                        let restaurant = Restaurant(json: json, for: store) // make's my restaurant struct = the json
-//                        restaurants.append(restaurant)
-//
-//                        //displaying all the info from json
-//
-//                        self.loadImage(urlString: restaurant.imageURL)
-//                        self.rating = restaurant.rating
-//                        self.storeName.text = restaurant.name
-//                        currentStoreName = self.storeName.text!
-//                        self.cost.text = restaurant.price
-//                        self.PageTitle.text = self.titleFormate(str: self.foodSearched!)
-//                        // checking the rating to set it to the right image
-//                        self.RatingImage.image = restaurant.ratingImage
-//
-//                    }
-//                }
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -150,7 +141,12 @@ class TinderScreen: UIViewController {
     
     // updates Mainimage IBOutlet
     func loadImage(urlString: String) {
+        if urlString != "" {
         MainImage.af_setImage(withURL: URL(string: urlString)!)
+        }else {
+            MainImage.image = #imageLiteral(resourceName: "Yelp_trademark_RGB_outline.png")
+        }
+        
     }
     
     //formating the url for the api

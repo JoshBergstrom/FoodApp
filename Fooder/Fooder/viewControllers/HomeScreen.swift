@@ -15,7 +15,6 @@ public var UserLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(37,
 class HomeScreen: UIViewController, CLLocationManagerDelegate {
     
     //IBOutlets
-    
     @IBOutlet weak var DistanceSegment: UISegmentedControl!
     @IBOutlet weak var PriceSegment: UISegmentedControl!
     @IBOutlet weak var searchBar: UITextField!
@@ -30,7 +29,10 @@ class HomeScreen: UIViewController, CLLocationManagerDelegate {
     @IBAction func unwindToHome(segue: UIStoryboardSegue){
     }
     
-
+    //    var for status Bar
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     //vars
     let manager = CLLocationManager()
@@ -50,8 +52,30 @@ class HomeScreen: UIViewController, CLLocationManagerDelegate {
         BarCard.layer.masksToBounds = true
         ChinaCard.layer.cornerRadius = 45
         ChinaCard.layer.masksToBounds = true
-        
-        
+        TacoCard.layer.borderWidth = 1
+        TacoCard.layer.borderColor = UIColor.black.cgColor
+        PizzaCard.layer.borderWidth = 1
+        PizzaCard.layer.borderColor = UIColor.black.cgColor
+        BurgerCard.layer.borderWidth = 1
+        BurgerCard.layer.borderColor = UIColor.black.cgColor
+        PancakeCard.layer.borderWidth = 1
+        PancakeCard.layer.borderColor = UIColor.black.cgColor
+        BarCard.layer.borderWidth = 1
+        BarCard.layer.borderColor = UIColor.black.cgColor
+        ChinaCard.layer.borderWidth = 1
+        ChinaCard.layer.borderColor = UIColor.black.cgColor
+        PriceSegment.layer.borderWidth = 1
+        PriceSegment.layer.borderColor = UIColor.black.cgColor
+        DistanceSegment.layer.borderWidth = 1
+        DistanceSegment.layer.borderColor = UIColor.black.cgColor
+        PriceSegment.layer.masksToBounds = true
+        PriceSegment.layer.cornerRadius = 5
+        DistanceSegment.layer.masksToBounds = true
+        DistanceSegment.layer.cornerRadius = 5
+        searchBar.layer.borderWidth = 1
+        searchBar.layer.borderColor = UIColor.black.cgColor
+        searchBar.layer.masksToBounds = true
+        searchBar.layer.cornerRadius = 5 
         let selectedDistance = DistanceSegment.selectedSegmentIndex
         let distance: Int
         
@@ -134,9 +158,6 @@ class HomeScreen: UIViewController, CLLocationManagerDelegate {
         print(UserLocation)
     }
     
-    
-    
-
     
     
 }

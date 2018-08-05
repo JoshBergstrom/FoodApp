@@ -48,6 +48,9 @@
 		036006DF2110FA9B009BCE25 /* Yelp_trademark_RGB_outline.png in Resources */ = {isa = PBXBuildFile; fileRef = 036006DE2110FA9A009BCE25 /* Yelp_trademark_RGB_outline.png */; };
 		036390C62108EDC800A4CFB6 /* restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036390C52108EDC800A4CFB6 /* restaurant.swift */; };
 		03E52E1A2113A12D00BF9764 /* YelpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E52E192113A12D00BF9764 /* YelpService.swift */; };
+		03E52E202114049F00BF9764 /* EndScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E52E1F2114049F00BF9764 /* EndScreen.swift */; };
+		03E52E242114E61B00BF9764 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E52E232114E61B00BF9764 /* Cell.swift */; };
+		03E52E26211500E400BF9764 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E52E25211500E400BF9764 /* TableViewController.swift */; };
 		168996981700D4EF70E224B0 /* Pods_Fooder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A01D9A95FA9363D6B71CC76 /* Pods_Fooder.framework */; };
 /* End PBXBuildFile section */
 
@@ -116,6 +119,9 @@
 		036006DE2110FA9A009BCE25 /* Yelp_trademark_RGB_outline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Yelp_trademark_RGB_outline.png; path = yelp/Yelp_trademark_RGB_outline.png; sourceTree = SOURCE_ROOT; };
 		036390C52108EDC800A4CFB6 /* restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = restaurant.swift; sourceTree = "<group>"; };
 		03E52E192113A12D00BF9764 /* YelpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpService.swift; sourceTree = "<group>"; };
+		03E52E1F2114049F00BF9764 /* EndScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndScreen.swift; sourceTree = "<group>"; };
+		03E52E232114E61B00BF9764 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		03E52E25211500E400BF9764 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		0A01D9A95FA9363D6B71CC76 /* Pods_Fooder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fooder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18C4450C1632C1CFC123B1FD /* Pods-Fooder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fooder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fooder/Pods-Fooder.debug.xcconfig"; sourceTree = "<group>"; };
 		8A0B591A07DE9D904D500002 /* Pods-Fooder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fooder.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fooder/Pods-Fooder.release.xcconfig"; sourceTree = "<group>"; };
@@ -179,6 +185,7 @@
 				031508682107BAA3001F0C1E /* Main.storyboard */,
 				0315086B2107BAA3001F0C1E /* Assets.xcassets */,
 				0315086D2107BAA3001F0C1E /* LaunchScreen.storyboard */,
+				031508642107BAA3001F0C1E /* AppDelegate.swift */,
 				031508702107BAA3001F0C1E /* Info.plist */,
 			);
 			path = Fooder;
@@ -206,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				036390C52108EDC800A4CFB6 /* restaurant.swift */,
+				03E52E232114E61B00BF9764 /* Cell.swift */,
 			);
 			path = "classes ";
 			sourceTree = "<group>";
@@ -253,7 +261,8 @@
 			children = (
 				03165910210B900C000C8CCA /* HomeScreen.swift */,
 				031508662107BAA3001F0C1E /* TinderScreen.swift */,
-				031508642107BAA3001F0C1E /* AppDelegate.swift */,
+				03E52E25211500E400BF9764 /* TableViewController.swift */,
+				03E52E1F2114049F00BF9764 /* EndScreen.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -493,7 +502,10 @@
 				036390C62108EDC800A4CFB6 /* restaurant.swift in Sources */,
 				03165911210B900C000C8CCA /* HomeScreen.swift in Sources */,
 				031508672107BAA3001F0C1E /* TinderScreen.swift in Sources */,
+				03E52E202114049F00BF9764 /* EndScreen.swift in Sources */,
+				03E52E242114E61B00BF9764 /* Cell.swift in Sources */,
 				031508652107BAA3001F0C1E /* AppDelegate.swift in Sources */,
+				03E52E26211500E400BF9764 /* TableViewController.swift in Sources */,
 				03E52E1A2113A12D00BF9764 /* YelpService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
