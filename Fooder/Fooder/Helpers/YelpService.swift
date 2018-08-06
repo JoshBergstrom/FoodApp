@@ -28,7 +28,6 @@ struct YelpService {
                 if let value = response.result.value {
                     let json = JSON(value)
                     let businessesJson = json["businesses"].arrayValue
-                    if businessesJson.isEmpty == false {
                     var restaurants: [Restaurant] = []
                     for businessIndex in 0..<10 {
                         let businessJson = businessesJson[businessIndex]
@@ -37,7 +36,6 @@ struct YelpService {
                     }
                 
                     completionHandler(restaurants)
-                    }
                 }
             case .failure:
                 print("none")

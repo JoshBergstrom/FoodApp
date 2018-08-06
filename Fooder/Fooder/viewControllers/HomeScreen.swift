@@ -25,6 +25,10 @@ class HomeScreen: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var BarCard: UIView!
     @IBOutlet weak var ChinaCard: UIView!
     @IBOutlet weak var PancakeCard: UIView!
+    @IBOutlet weak var iceCreamCard: UIView!
+    @IBOutlet weak var saladCard: UIView!
+    @IBOutlet weak var chickenCard: UIView!
+    
     //unwindSegue
     @IBAction func unwindToHome(segue: UIStoryboardSegue){
     }
@@ -52,6 +56,12 @@ class HomeScreen: UIViewController, CLLocationManagerDelegate {
         BarCard.layer.masksToBounds = true
         ChinaCard.layer.cornerRadius = 45
         ChinaCard.layer.masksToBounds = true
+        saladCard.layer.cornerRadius = 45
+        saladCard.layer.masksToBounds = true
+        iceCreamCard.layer.cornerRadius = 45
+        iceCreamCard.layer.masksToBounds = true
+        chickenCard.layer.cornerRadius = 45
+        chickenCard.layer.masksToBounds = true
         TacoCard.layer.borderWidth = 1
         TacoCard.layer.borderColor = UIColor.black.cgColor
         PizzaCard.layer.borderWidth = 1
@@ -68,6 +78,12 @@ class HomeScreen: UIViewController, CLLocationManagerDelegate {
         PriceSegment.layer.borderColor = UIColor.black.cgColor
         DistanceSegment.layer.borderWidth = 1
         DistanceSegment.layer.borderColor = UIColor.black.cgColor
+        chickenCard.layer.borderWidth = 1
+        chickenCard.layer.borderColor = UIColor.black.cgColor
+        saladCard.layer.borderWidth = 1
+        saladCard.layer.borderColor = UIColor.black.cgColor
+        iceCreamCard.layer.borderWidth = 1
+        iceCreamCard.layer.borderColor = UIColor.black.cgColor
         PriceSegment.layer.masksToBounds = true
         PriceSegment.layer.cornerRadius = 5
         DistanceSegment.layer.masksToBounds = true
@@ -189,5 +205,19 @@ class HomeScreen: UIViewController, CLLocationManagerDelegate {
         search()
         performSegue(withIdentifier: "moveToTinder", sender: self)
     }
-    
+    @IBAction func iceCreamButton(_ sender: Any) {
+        searchBar.text = "Ice Cream"
+        search()
+        performSegue(withIdentifier: "moveToTinder", sender: self)
+    }
+    @IBAction func ChickenButton(_ sender: Any) {
+        searchBar.text = "Chicken"
+        search()
+        performSegue(withIdentifier: "moveToTinder", sender: self)
+    }
+    @IBAction func saladButton(_ sender: Any) {
+        searchBar.text = "salad"
+        search()
+        performSegue(withIdentifier: "moveToTinder", sender: self)
+    }
 }

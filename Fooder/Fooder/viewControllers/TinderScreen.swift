@@ -46,6 +46,15 @@ class TinderScreen: UIViewController {
     @IBOutlet weak var CardView: UIView!
     @IBOutlet weak var XCard: UIView!
     @IBOutlet weak var HeartCard: UIView!
+    @IBAction func heartbutton(_ sender: Any) {
+        guard restaurants.isEmpty == false else { return }
+        storeCurrentRestaurant()
+    }
+    @IBAction func Xbutton(_ sender: Any) {
+        guard restaurants.isEmpty == false else { return }
+        removeCurrentRestaurant()
+    }
+    
     
     @IBAction func backButtonPressed(_ sender: Any) {
         self.performSegue(withIdentifier: "unwindToHome", sender: self)
