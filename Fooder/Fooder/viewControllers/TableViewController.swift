@@ -11,17 +11,19 @@ import UIKit
 class TableViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var text: UILabel!
     
-//    @IBAction func backButtonPressed(_ sender: Any) {
-//        self.performSegue(withIdentifier: "unwindToHome", sender: self)
-//    }
+
     //vars
     var likedRestarunts = [Restaurant]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print("NumRest: \(likedRestarunts.count)")
+        text.layer.cornerRadius = 20
+        text.layer.masksToBounds = true
+        text.layer.borderWidth = 1
+        text.layer.borderColor = UIColor.black.cgColor
+        
     }
     
     override func didReceiveMemoryWarning() {

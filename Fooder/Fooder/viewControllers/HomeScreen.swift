@@ -175,7 +175,7 @@ class HomeScreen: UIViewController, CLLocationManagerDelegate {
         performSegue(withIdentifier: "moveToTinder", sender: self)
     }
     @IBAction func barButton(_ sender: Any) {
-        searchBar.text = "bars"
+        searchBar.text = "bar"
         search()
         performSegue(withIdentifier: "moveToTinder", sender: self)
     }
