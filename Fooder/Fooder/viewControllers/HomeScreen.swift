@@ -158,6 +158,36 @@ class HomeScreen: UIViewController, CLLocationManagerDelegate {
         print(UserLocation)
     }
     
-    
+    //IBActions
+    @IBAction func tacoButton(_ sender: Any) {
+        searchBar.text = "tacos"
+        search()
+        performSegue(withIdentifier: "moveToTinder", sender: self)
+    }
+    @IBAction func burgerButton(_ sender: Any) {
+        searchBar.text = "burgers"
+        search()
+        performSegue(withIdentifier: "moveToTinder", sender: self)
+    }
+    @IBAction func pizzaButton(_ sender: Any) {
+        searchBar.text = "pizza"
+        search()
+        performSegue(withIdentifier: "moveToTinder", sender: self)
+    }
+    @IBAction func barButton(_ sender: Any) {
+        searchBar.text = "bars"
+        search()
+        performSegue(withIdentifier: "moveToTinder", sender: self)
+    }
+    @IBAction func chinaButton(_ sender: Any) {
+        searchBar.text = "chinese"
+        search()
+        performSegue(withIdentifier: "moveToTinder", sender: self)
+    }
+    @IBAction func pancakeButton(_ sender: Any) {
+        searchBar.text = "pancakes"
+        search()
+        performSegue(withIdentifier: "moveToTinder", sender: self)
+    }
     
 }

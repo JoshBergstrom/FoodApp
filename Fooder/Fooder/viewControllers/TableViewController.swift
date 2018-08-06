@@ -20,7 +20,7 @@ class TableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.register(StoreTableViewCell.self, forCellReuseIdentifier: "storeCell")
+
         print("NumRest: \(likedRestarunts.count)")
     }
     
@@ -44,9 +44,9 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource {
         let store = likedRestarunts[indexPath.row]
         print(store)
        
-//        cell.storeName.text = "name"
-//        cell.Cost.text = "price"
-//        cell.reviewImage.image = #imageLiteral(resourceName: "regular_0.png")
+        cell.storeName.text = store.name
+        cell.Cost.text = store.price
+        cell.reviewImage.image = store.ratingImage
         
         return cell
     }

@@ -78,7 +78,6 @@ class TinderScreen: UIViewController {
         } else {
             print(storedRestaurants.count)
             performSegue(withIdentifier: "showCells", sender: self)
-
         }
         
     }
@@ -87,7 +86,6 @@ class TinderScreen: UIViewController {
         guard let currentRestaurant = currentlyVisibleRestaurant else {
             fatalError("there are no visible resutants when the user swiped right")
         }
-        
         storedRestaurants.append(currentRestaurant)
         restaurants.removeFirst()
         updateUI()
@@ -177,6 +175,8 @@ extension TinderScreen
 {
     @objc func swipeAction(swipe: UISwipeGestureRecognizer)
     {
+        guard restaurants.isEmpty == false else { return }
+        
         switch swipe.direction.rawValue {
         case 1:
             storeCurrentRestaurant()

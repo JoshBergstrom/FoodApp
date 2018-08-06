@@ -37,8 +37,8 @@ struct YelpService {
                 
                     completionHandler(restaurants)
                 }
-            case .failure(let error):
-                print(error)
+            case .failure:
+                print("none")
             }
         }
     }

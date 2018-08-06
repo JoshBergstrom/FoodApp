@@ -109,6 +109,9 @@
                                         <state key="normal" title="🌮">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tacoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6yW-OW-fOM"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -124,6 +127,9 @@
                                         <state key="normal" title="🍔">
                                             <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="burgerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gax-RF-d4F"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -137,6 +143,9 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="71"/>
                                         <state key="normal" title="🍕"/>
+                                        <connections>
+                                            <action selector="pizzaButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j8j-Q0-0RR"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -150,6 +159,9 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="80"/>
                                         <state key="normal" title="🍻"/>
+                                        <connections>
+                                            <action selector="barButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JiG-Re-iqf"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -163,6 +175,9 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="73"/>
                                         <state key="normal" title="🥡"/>
+                                        <connections>
+                                            <action selector="chinaButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OeU-ff-Lvm"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -204,6 +219,9 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="77"/>
                                         <state key="normal" title="🥞"/>
+                                        <connections>
+                                            <action selector="pancakeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dr8-6X-GRa"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -260,27 +278,7 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GYk-91-R4X">
                                         <rect key="frame" x="0.0" y="0.0" width="87.666666666666671" height="67"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NCf-Vq-ANr">
-                                                <rect key="frame" x="0.0" y="19" width="72" height="29"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="NCf-Vq-ANr" secondAttribute="height" multiplier="55:39" constant="31.102564102564102" id="ZO9-bH-G29"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
-                                                <state key="normal" title="Back">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="backButtonPressed:" destination="WwQ-ZQ-tEw" eventType="touchUpInside" id="nkU-YY-fui"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="NCf-Vq-ANr" firstAttribute="leading" secondItem="GYk-91-R4X" secondAttribute="leading" id="4Dg-Bj-bUW"/>
-                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NCf-Vq-ANr" secondAttribute="trailing" constant="7.6666666666666714" id="9cc-iZ-RNh"/>
-                                            <constraint firstItem="NCf-Vq-ANr" firstAttribute="top" secondItem="GYk-91-R4X" secondAttribute="top" constant="19" id="Niw-3Z-4uP"/>
-                                        </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="alF-br-rca">
                                         <rect key="frame" x="87.666666666666686" y="0.0" width="200" height="67"/>
@@ -459,7 +457,6 @@
                         <outlet property="storeName" destination="aNd-9m-wbW" id="h47-6d-UmF"/>
                         <segue destination="Vo5-Rv-9s0" kind="unwind" identifier="unwindToHome" unwindAction="unwindToHomeWithSegue:" id="F7h-Cu-rca"/>
                         <segue destination="1oX-GF-d1H" kind="presentation" identifier="showCells" id="xAy-jX-nL8"/>
-                        <segue destination="K8e-w4-9hn" kind="presentation" identifier="showEnd" id="BxQ-tn-18K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="49X-yI-aDA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -513,10 +510,10 @@
                                         <rect key="frame" x="8" y="413" width="172" height="38"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Store Name " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WzW-18-cXm">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Store Name " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="WzW-18-cXm">
                                         <rect key="frame" x="0.0" y="368" width="343" height="37"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="32"/>
                                         <color key="textColor" red="0.36862745098039218" green="0.36862745098039218" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -527,7 +524,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$$$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbd-Wj-buN">
                                         <rect key="frame" x="236" y="413" width="78" height="38"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="30"/>
                                         <color key="textColor" red="0.36862745098039218" green="0.36862745098039218" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -535,7 +532,7 @@
                                         <rect key="frame" x="70" y="459" width="202" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="32"/>
                                         <state key="normal" title="Directions">
                                             <color key="titleColor" red="0.36862745098039218" green="0.36862745098039218" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -544,7 +541,7 @@
                                 <color key="backgroundColor" red="0.66274509803921566" green="0.66274509803921566" blue="0.66274509803921566" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Yelp_trademark_RGB_outline.png" translatesAutoresizingMaskIntoConstraints="NO" id="Nsn-jd-Bb2">
-                                <rect key="frame" x="255" y="715" width="104" height="63"/>
+                                <rect key="frame" x="268" y="731" width="91" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -559,7 +556,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EMI-wA-Nwk" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="XnV-cb-Jpg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2399" y="131"/>
+            <point key="canvasLocation" x="2397.5999999999999" y="130.78817733990149"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="bNr-zV-cRV">
@@ -612,29 +609,53 @@
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="112.66666666666667"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$$$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LYC-oK-EDe">
-                                                    <rect key="frame" x="250" y="19" width="78" height="38"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
-                                                    <color key="textColor" red="0.36862745099999999" green="0.36862745099999999" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="regular_0.png" translatesAutoresizingMaskIntoConstraints="NO" id="Cb8-pX-yYW">
-                                                    <rect key="frame" x="7" y="64" width="186" height="38"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Store Name " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KeY-tF-zfK">
-                                                    <rect key="frame" x="7" y="19" width="186" height="37"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
-                                                    <color key="textColor" red="0.36862745099999999" green="0.36862745099999999" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Yelp_trademark_RGB_outline.png" translatesAutoresizingMaskIntoConstraints="NO" id="BfO-nM-iXl">
-                                                    <rect key="frame" x="255" y="64" width="73" height="47"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Kw6-hq-vJp">
+                                                    <rect key="frame" x="15" y="11" width="313" height="91"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X0o-7m-hOW">
+                                                            <rect key="frame" x="0.0" y="0.0" width="313" height="51"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Store Name " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KeY-tF-zfK">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="261" height="51"/>
+                                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="30"/>
+                                                                    <color key="textColor" red="0.36862745099999999" green="0.36862745099999999" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$$$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LYC-oK-EDe">
+                                                                    <rect key="frame" x="261" y="0.0" width="52" height="51"/>
+                                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="31"/>
+                                                                    <color key="textColor" red="0.36862745099999999" green="0.36862745099999999" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="VSH-ra-gM0">
+                                                            <rect key="frame" x="0.0" y="59" width="313" height="32"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="regular_0.png" translatesAutoresizingMaskIntoConstraints="NO" id="Cb8-pX-yYW">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="32"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" secondItem="Cb8-pX-yYW" secondAttribute="height" multiplier="5:1" id="3tR-pA-Pox"/>
+                                                                        <constraint firstAttribute="height" constant="32" id="nxo-Ds-2uK"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Yelp_trademark_RGB_outline.png" translatesAutoresizingMaskIntoConstraints="NO" id="BfO-nM-iXl">
+                                                                    <rect key="frame" x="248.66666666666671" y="0.0" width="64.333333333333343" height="32"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" secondItem="BfO-nM-iXl" secondAttribute="height" multiplier="2:1" id="I48-Ya-UCg"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Kw6-hq-vJp" firstAttribute="leading" secondItem="Niy-Cp-4Wa" secondAttribute="leadingMargin" id="OlJ-V9-vVM"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Kw6-hq-vJp" secondAttribute="bottom" id="WYc-iR-Y8I"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Kw6-hq-vJp" secondAttribute="trailing" id="aYE-ap-EYs"/>
+                                                <constraint firstItem="Kw6-hq-vJp" firstAttribute="top" secondItem="Niy-Cp-4Wa" secondAttribute="topMargin" id="o0I-uj-ein"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="Cost" destination="LYC-oK-EDe" id="bb8-Ub-Q7V"/>
@@ -667,7 +688,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hMl-Go-6oo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="lms-9P-WgP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1644" y="592"/>
+            <point key="canvasLocation" x="1610" y="131"/>
         </scene>
     </scenes>
     <resources>
