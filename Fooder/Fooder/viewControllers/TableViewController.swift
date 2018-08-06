@@ -43,11 +43,10 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource {
 
         let store = likedRestarunts[indexPath.row]
         print(store)
-        
-        cell.storeName.text = store.name
-        cell.Cost.text = store.price
-        cell.reviewImage = store.ratingImage
-        
+       
+//        cell.storeName.text = "name"
+//        cell.Cost.text = "price"
+//        cell.reviewImage.image = #imageLiteral(resourceName: "regular_0.png")
         
         return cell
     }

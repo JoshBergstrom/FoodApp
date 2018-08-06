@@ -30,7 +30,7 @@ class EndScreen: UIViewController {
         return .lightContent
     }
     
-    @IBOutlet weak var topText: UILabel!
+    
     @IBOutlet weak var directionButton: UIButton!
     @IBAction func unwindToHomeScreenViewController(segue: UIStoryboard) { }
     

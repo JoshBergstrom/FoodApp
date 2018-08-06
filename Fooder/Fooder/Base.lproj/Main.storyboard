@@ -591,7 +591,6 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="backButtonPressed:" destination="1oX-GF-d1H" eventType="touchUpInside" id="G9a-xf-NNt"/>
                                     <action selector="backButtonPressed:" destination="K8e-w4-9hn" eventType="touchUpInside" id="HaY-Um-kN8"/>
                                     <segue destination="lms-9P-WgP" kind="unwind" identifier="unwindToHome" unwindAction="unwindToHomeWithSegue:" id="P9P-ip-6LQ"/>
                                 </connections>
@@ -637,6 +636,11 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="Cost" destination="LYC-oK-EDe" id="bb8-Ub-Q7V"/>
+                                            <outlet property="reviewImage" destination="Cb8-pX-yYW" id="4Qd-bn-xQN"/>
+                                            <outlet property="storeName" destination="KeY-tF-zfK" id="BjU-EN-1Q7"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

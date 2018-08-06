@@ -65,9 +65,6 @@ class TinderScreen: UIViewController {
     
     
     
-    
-    
-    
     func updateUI()  {
         //displaying all the info from json
         if let currentlyVisibleRestaurant = self.currentlyVisibleRestaurant {
@@ -81,6 +78,7 @@ class TinderScreen: UIViewController {
         } else {
             print(storedRestaurants.count)
             performSegue(withIdentifier: "showCells", sender: self)
+
         }
         
     }
