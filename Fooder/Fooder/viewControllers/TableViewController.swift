@@ -12,6 +12,7 @@ class TableViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var text: UILabel!
+    @IBOutlet weak var pageTitle: UILabel!
     
     
     //unwindSegue
@@ -20,6 +21,7 @@ class TableViewController: UIViewController {
     
     //vars
     var likedRestarunts = [Restaurant]()
+    var pagetop:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +29,7 @@ class TableViewController: UIViewController {
         text.layer.masksToBounds = true
         text.layer.borderWidth = 1
         text.layer.borderColor = UIColor.black.cgColor
-        
+        pageTitle.text = pagetop
     }
     
     override func didReceiveMemoryWarning() {
@@ -49,7 +51,7 @@ class TableViewController: UIViewController {
             let destination = segue.destination as! EndScreen
             // 4
             destination.restaurant = note
-            
+            destination.pageTop = self.pagetop
         default:
             print("unexpected segue identifier")
         }
@@ -80,4 +82,8 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource {
         self.performSegue(withIdentifier: "cellClicked", sender: self)
     }
     
+    //    var for status Bar
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }

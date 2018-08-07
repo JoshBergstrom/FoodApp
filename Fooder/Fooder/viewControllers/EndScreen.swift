@@ -11,19 +11,32 @@ import UIKit
 class EndScreen: UIViewController {
     
     var restaurant: Restaurant!
-
+    var pageTop: String = ""
+    
+    //IBOutlets
+    @IBOutlet weak var storeCard: UIView!
+    @IBOutlet weak var pageTitle: UILabel!
+    @IBOutlet weak var storeName: UILabel!
+    @IBOutlet weak var costLabel: UILabel!
+    @IBOutlet weak var reviewImage: UIImageView!
+    @IBOutlet weak var bigImage: UIImageView!
+    @IBAction func unwindToCellScreenViewController(segue: UIStoryboard) { }
+    @IBAction func backButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "unwindtoTableViewFromEnd", sender: self)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        directionButton.layer.masksToBounds = true
-        directionButton.layer.cornerRadius = 10
-        directionButton.layer.borderWidth = 1
-        directionButton.layer.borderColor = UIColor.black.cgColor
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        storeName.text = restaurant.name
+        costLabel.text = restaurant.price
+        reviewImage.image = restaurant.ratingImage
+        self.loadImage(urlString: restaurant.imageURL)
+        pageTitle.text = pageTop
+        storeCard.layer.masksToBounds = true
+        storeCard.layer.cornerRadius = 20
+        storeCard.layer.borderWidth = 1
+        storeCard.layer.borderColor = UIColor.black.cgColor
     }
     
     
@@ -33,14 +46,15 @@ class EndScreen: UIViewController {
     }
     
     
-    @IBOutlet weak var directionButton: UIButton!
-    @IBAction func unwindToCellScreenViewController(segue: UIStoryboard) { }
     
-    @IBAction func backButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "unwindtoTableViewFromEnd", sender: self)
+    func loadImage(urlString: String) {
+        if urlString != "" {
+            bigImage.af_setImage(withURL: URL(string: urlString)!)
+        }else {
+            bigImage.image = #imageLiteral(resourceName: "Yelp_trademark_RGB_outline.png")
+        }
     }
     
     
     
-
 }

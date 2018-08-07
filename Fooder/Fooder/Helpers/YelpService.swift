@@ -12,7 +12,7 @@ import SwiftyJSON
 
 
 struct YelpService {
- 
+    
     static func getRestarunts(foodToSearch: String, theDistance: String, thePrice: String, completionHandler: @escaping ([Restaurant]) -> ()) {
         //setting up Api
         let urlstring = "https://api.yelp.com/v3/businesses/search?term=\(String((foodToSearch)))&latitude=\(UserLocation.latitude)&longitude=\(UserLocation.longitude)&open_now=true&radius=\(String(theDistance))&price=\(String(thePrice))&limit=10"
@@ -29,12 +29,16 @@ struct YelpService {
                     let json = JSON(value)
                     let businessesJson = json["businesses"].arrayValue
                     var restaurants: [Restaurant] = []
-                    for aJsonBusiness in businessesJson {
-                        let restaurant = Restaurant(json: aJsonBusiness) // make's my restaurant struct = the json
-                        restaurants.append(restaurant)
+                    if json["businesses"].arrayValue.isEmpty == true {
+                        print("hello")
+                    } else {
+                        for aJsonBusiness in businessesJson {
+                            let restaurant = Restaurant(json: aJsonBusiness) // make's my restaurant struct = the json
+                            restaurants.append(restaurant)
+                        }
                     }
-                
                     completionHandler(restaurants)
+                    
                 }
             case .failure:
                 print("none")

@@ -26,7 +26,7 @@ class TinderScreen: UIViewController {
     
     //var's for api
     var rating = Double() // this will be used for the rating image
-    var foodSearched: String?
+    var foodSearched: String = ""
     var theDistance: Int = 1609
     var thePrice: String = "1"
     var storeNum: Int = 0
@@ -70,6 +70,7 @@ class TinderScreen: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as! TableViewController
         destination.likedRestarunts = storedRestaurants
+        destination.pagetop = self.foodSearched
         }
     
     
@@ -81,7 +82,7 @@ class TinderScreen: UIViewController {
             self.rating = currentlyVisibleRestaurant.rating
             self.storeName.text = currentlyVisibleRestaurant.name
             self.cost.text = currentlyVisibleRestaurant.price
-            self.PageTitle.text = self.titleFormate(str: self.foodSearched!)
+            self.PageTitle.text = self.titleFormate(str: self.foodSearched)
             // checking the rating to set it to the right image
             self.RatingImage.image = currentlyVisibleRestaurant.ratingImage
         } else {
@@ -119,7 +120,7 @@ class TinderScreen: UIViewController {
         XCard.layer.borderColor = UIColor.black.cgColor
         HeartCard.layer.borderWidth = 1
         HeartCard.layer.borderColor = UIColor.black.cgColor
-        let foodToSearch = stringFormat(str: self.foodSearched!)
+        let foodToSearch = stringFormat(str: self.foodSearched)
         
         
         //left swipe recognizer
