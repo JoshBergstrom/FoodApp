@@ -133,8 +133,14 @@ class TinderScreen: UIViewController {
         
         //myBlockOfCodeToCallWhenGetRestauntsIsDone
         let myBlockOfCodeToCallWhenGetRestauntsIsDone: ([Restaurant]) -> () = { restaurantsFromYelp in
-            self.restaurants = restaurantsFromYelp
-            self.updateUI()
+            
+            if restaurantsFromYelp.count != 0 {
+                self.restaurants = restaurantsFromYelp
+                self.updateUI()
+            } else {
+                
+            }
+            
         }
         YelpService.getRestarunts(foodToSearch: foodToSearch, theDistance: String(theDistance), thePrice: thePrice, completionHandler: myBlockOfCodeToCallWhenGetRestauntsIsDone)
     }

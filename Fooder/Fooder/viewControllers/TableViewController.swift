@@ -13,7 +13,11 @@ class TableViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var text: UILabel!
     
-
+    
+    //unwindSegue
+    @IBAction func unwindToTableView(segue: UIStoryboardSegue){
+    }
+    
     //vars
     var likedRestarunts = [Restaurant]()
     
@@ -31,6 +35,25 @@ class TableViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else { return }
+        
+        switch identifier {
+        case "cellClicked":
+            // 1
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            
+            // 2
+            let note = likedRestarunts[indexPath.row]
+            // 3
+            let destination = segue.destination as! EndScreen
+            // 4
+            destination.restaurant = note
+            
+        default:
+            print("unexpected segue identifier")
+        }
+    }
 
 }
 
@@ -51,6 +74,10 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource {
         cell.reviewImage.image = store.ratingImage
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "cellClicked", sender: self)
     }
     
 }

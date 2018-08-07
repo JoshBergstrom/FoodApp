@@ -18,16 +18,19 @@ class HomeScreen: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var DistanceSegment: UISegmentedControl!
     @IBOutlet weak var PriceSegment: UISegmentedControl!
     @IBOutlet weak var searchBar: UITextField!
-    // card views
-    @IBOutlet weak var BurgerCard: UIView!
-    @IBOutlet weak var PizzaCard: UIView!
-    @IBOutlet weak var TacoCard: UIView!
-    @IBOutlet weak var BarCard: UIView!
-    @IBOutlet weak var ChinaCard: UIView!
-    @IBOutlet weak var PancakeCard: UIView!
-    @IBOutlet weak var iceCreamCard: UIView!
-    @IBOutlet weak var saladCard: UIView!
-    @IBOutlet weak var chickenCard: UIView!
+ 
+    // food buttons
+
+    @IBOutlet weak var tacoButton: UIButton!
+    @IBOutlet weak var burgerButton: UIButton!
+    @IBOutlet weak var pizzaButton: UIButton!
+    @IBOutlet weak var barButton: UIButton!
+    @IBOutlet weak var chinaButton: UIButton!
+    @IBOutlet weak var pancakesButton: UIButton!
+    @IBOutlet weak var iceCreamButton: UIButton!
+    @IBOutlet weak var chickenButton: UIButton!
+    @IBOutlet weak var saladButton: UIButton!
+    
     
     //unwindSegue
     @IBAction func unwindToHome(segue: UIStoryboardSegue){
@@ -43,47 +46,24 @@ class HomeScreen: UIViewController, CLLocationManagerDelegate {
     var chosenDistance = 0
     var chosenPrice = "1"
     
+    
+    
     func setupView() {
-        BurgerCard.layer.cornerRadius = 45
-        BurgerCard.layer.masksToBounds = true
-        PizzaCard.layer.cornerRadius = 45
-        PizzaCard.layer.masksToBounds = true
-        TacoCard.layer.cornerRadius = 45
-        TacoCard.layer.masksToBounds = true
-        PancakeCard.layer.cornerRadius = 45
-        PancakeCard.layer.masksToBounds = true
-        BarCard.layer.cornerRadius = 45
-        BarCard.layer.masksToBounds = true
-        ChinaCard.layer.cornerRadius = 45
-        ChinaCard.layer.masksToBounds = true
-        saladCard.layer.cornerRadius = 45
-        saladCard.layer.masksToBounds = true
-        iceCreamCard.layer.cornerRadius = 45
-        iceCreamCard.layer.masksToBounds = true
-        chickenCard.layer.cornerRadius = 45
-        chickenCard.layer.masksToBounds = true
-        TacoCard.layer.borderWidth = 1
-        TacoCard.layer.borderColor = UIColor.black.cgColor
-        PizzaCard.layer.borderWidth = 1
-        PizzaCard.layer.borderColor = UIColor.black.cgColor
-        BurgerCard.layer.borderWidth = 1
-        BurgerCard.layer.borderColor = UIColor.black.cgColor
-        PancakeCard.layer.borderWidth = 1
-        PancakeCard.layer.borderColor = UIColor.black.cgColor
-        BarCard.layer.borderWidth = 1
-        BarCard.layer.borderColor = UIColor.black.cgColor
-        ChinaCard.layer.borderWidth = 1
-        ChinaCard.layer.borderColor = UIColor.black.cgColor
+        
+        let homeScreenButtons: [UIButton] = [tacoButton, burgerButton, pizzaButton, barButton, chinaButton,pancakesButton,iceCreamButton, chickenButton, saladButton]
+            
+            
+        homeScreenButtons.forEach { (button) in
+//            button.layer.cornerRadius = button.bounds.width / 2  //45
+            button.layer.masksToBounds = true
+            button.layer.borderWidth = 1
+            button.layer.borderColor = UIColor.black.cgColor
+        }
+        
         PriceSegment.layer.borderWidth = 1
         PriceSegment.layer.borderColor = UIColor.black.cgColor
         DistanceSegment.layer.borderWidth = 1
         DistanceSegment.layer.borderColor = UIColor.black.cgColor
-        chickenCard.layer.borderWidth = 1
-        chickenCard.layer.borderColor = UIColor.black.cgColor
-        saladCard.layer.borderWidth = 1
-        saladCard.layer.borderColor = UIColor.black.cgColor
-        iceCreamCard.layer.borderWidth = 1
-        iceCreamCard.layer.borderColor = UIColor.black.cgColor
         PriceSegment.layer.masksToBounds = true
         PriceSegment.layer.cornerRadius = 5
         DistanceSegment.layer.masksToBounds = true
@@ -146,7 +126,16 @@ class HomeScreen: UIViewController, CLLocationManagerDelegate {
         performSegue(withIdentifier: "moveToTinder", sender: self)
     }
     
-    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        let homeScreenButtons: [UIButton] = [tacoButton, burgerButton, pizzaButton, barButton, chinaButton,pancakesButton,iceCreamButton, chickenButton, saladButton]
+        
+        homeScreenButtons.forEach { (button) in
+            button.layer.cornerRadius = button.layer.bounds.width / 2.0  //45
+        }
+        
+    }
     
     override func viewDidLoad() {
         setupView()

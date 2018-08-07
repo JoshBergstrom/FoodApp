@@ -9,6 +9,8 @@
 import UIKit
 
 class EndScreen: UIViewController {
+    
+    var restaurant: Restaurant!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,10 +34,10 @@ class EndScreen: UIViewController {
     
     
     @IBOutlet weak var directionButton: UIButton!
-    @IBAction func unwindToHomeScreenViewController(segue: UIStoryboard) { }
+    @IBAction func unwindToCellScreenViewController(segue: UIStoryboard) { }
     
     @IBAction func backButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "unwindtoHomeFromEnd", sender: self)
+        performSegue(withIdentifier: "unwindtoTableViewFromEnd", sender: self)
     }
     
     
