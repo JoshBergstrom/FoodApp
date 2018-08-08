@@ -15,7 +15,7 @@ struct YelpService {
     
     static func getRestarunts(foodToSearch: String, theDistance: String, thePrice: String, completionHandler: @escaping ([Restaurant]) -> ()) {
         //setting up Api
-        let urlstring = "https://api.yelp.com/v3/businesses/search?term=\(String((foodToSearch)))&latitude=\(UserLocation.latitude)&longitude=\(UserLocation.longitude)&open_now=true&radius=\(String(theDistance))&price=\(String(thePrice))&limit=10"
+        let urlstring = "https://api.yelp.com/v3/businesses/search?term=\(String((foodToSearch)))&latitude=\(UserLocation.latitude)&longitude=\(UserLocation.longitude)&radius=\(String(theDistance))&price=\(String(thePrice))&limit=10"
         let url = URL(string: urlstring)
         var request = URLRequest(url: url!)
         request.httpMethod = "GET"
