@@ -47,6 +47,8 @@
 		036006DC2110F965009BCE25 /* regular_3_half.png in Resources */ = {isa = PBXBuildFile; fileRef = 036006BE2110F965009BCE25 /* regular_3_half.png */; };
 		036006DF2110FA9B009BCE25 /* Yelp_trademark_RGB_outline.png in Resources */ = {isa = PBXBuildFile; fileRef = 036006DE2110FA9A009BCE25 /* Yelp_trademark_RGB_outline.png */; };
 		036390C62108EDC800A4CFB6 /* restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036390C52108EDC800A4CFB6 /* restaurant.swift */; };
+		03A4DD65211E2B3F0043780A /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03A4DD63211E2B3F0043780A /* Fabric.framework */; };
+		03A4DD66211E2B3F0043780A /* Answers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03A4DD64211E2B3F0043780A /* Answers.framework */; };
 		03E52E1A2113A12D00BF9764 /* YelpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E52E192113A12D00BF9764 /* YelpService.swift */; };
 		03E52E202114049F00BF9764 /* EndScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E52E1F2114049F00BF9764 /* EndScreen.swift */; };
 		03E52E242114E61B00BF9764 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E52E232114E61B00BF9764 /* Cell.swift */; };
@@ -118,6 +120,8 @@
 		036006BE2110F965009BCE25 /* regular_3_half.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = regular_3_half.png; path = yelp/regular_3_half.png; sourceTree = SOURCE_ROOT; };
 		036006DE2110FA9A009BCE25 /* Yelp_trademark_RGB_outline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Yelp_trademark_RGB_outline.png; path = yelp/Yelp_trademark_RGB_outline.png; sourceTree = SOURCE_ROOT; };
 		036390C52108EDC800A4CFB6 /* restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = restaurant.swift; sourceTree = "<group>"; };
+		03A4DD63211E2B3F0043780A /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
+		03A4DD64211E2B3F0043780A /* Answers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Answers.framework; sourceTree = SOURCE_ROOT; };
 		03E52E192113A12D00BF9764 /* YelpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpService.swift; sourceTree = "<group>"; };
 		03E52E1F2114049F00BF9764 /* EndScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndScreen.swift; sourceTree = "<group>"; };
 		03E52E232114E61B00BF9764 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
@@ -132,7 +136,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03A4DD66211E2B3F0043780A /* Answers.framework in Frameworks */,
 				168996981700D4EF70E224B0 /* Pods_Fooder.framework in Frameworks */,
+				03A4DD65211E2B3F0043780A /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +193,8 @@
 				0315086D2107BAA3001F0C1E /* LaunchScreen.storyboard */,
 				031508642107BAA3001F0C1E /* AppDelegate.swift */,
 				031508702107BAA3001F0C1E /* Info.plist */,
+				03A4DD64211E2B3F0043780A /* Answers.framework */,
+				03A4DD63211E2B3F0043780A /* Fabric.framework */,
 			);
 			path = Fooder;
 			sourceTree = "<group>";
@@ -304,6 +312,7 @@
 				0315085E2107BAA3001F0C1E /* Frameworks */,
 				0315085F2107BAA3001F0C1E /* Resources */,
 				3DEDAA2C20D451A344963953 /* [CP] Embed Pods Frameworks */,
+				03A4DD62211E2AFC0043780A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -452,6 +461,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		03A4DD62211E2AFC0043780A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run d73ed352a06cdea79fd1d5218b0c375791da6db0 30b97fca1f8b78b8884518a07fcea3140b577f0674d3d7f65411fde73f135dfb";
+		};
 		3DEDAA2C20D451A344963953 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -682,6 +704,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F2PA83974V;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Fooder/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -702,6 +728,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F2PA83974V;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Fooder/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class TableViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
@@ -30,6 +31,7 @@ class TableViewController: UIViewController {
         text.layer.borderWidth = 1
         text.layer.borderColor = UIColor.black.cgColor
         pageTitle.text = pagetop
+
     }
     
     override func didReceiveMemoryWarning() {
