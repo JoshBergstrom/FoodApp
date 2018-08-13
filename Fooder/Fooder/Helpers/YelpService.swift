@@ -30,7 +30,7 @@ struct YelpService {
                     let businessesJson = json["businesses"].arrayValue
                     var restaurants: [Restaurant] = []
                     if json["businesses"].arrayValue.isEmpty == true {
-                        print("hello")
+                        print("no stores in search")
                     } else {
                         for aJsonBusiness in businessesJson {
                             let restaurant = Restaurant(json: aJsonBusiness) // make's my restaurant struct = the json
@@ -41,7 +41,9 @@ struct YelpService {
                     
                 }
             case .failure:
-                print("none")
+                print("api failed")
+                let noRestaurants: [Restaurant] = []
+                completionHandler(noRestaurants)
             }
         }
     }

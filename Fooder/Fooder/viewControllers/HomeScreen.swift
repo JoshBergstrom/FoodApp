@@ -71,42 +71,43 @@ class HomeScreen: UIViewController, CLLocationManagerDelegate {
         searchBar.layer.borderWidth = 1
         searchBar.layer.borderColor = UIColor.black.cgColor
         searchBar.layer.masksToBounds = true
-        searchBar.layer.cornerRadius = 5 
-        let selectedDistance = DistanceSegment.selectedSegmentIndex
-        let distance: Int
-        
-        switch selectedDistance {
-        case 0:
-            distance = 1609
-        case 1:
-            distance = 8046
-        case 2:
-            distance = 16093
-        default:
-            distance = 1609
-        }
-        
-        let selectedPrice = PriceSegment.selectedSegmentIndex
-        let price: String
-        
-        switch selectedPrice {
-        case 1:
-            price = "1"
-        case 2:
-            price = "1, 2"
-        case 3:
-            price = "1, 2, 3"
-        default:
-            price = "1"
-            
-        }
-        chosenPrice = price
-        chosenDistance = distance
+        searchBar.layer.cornerRadius = 5
+
     }
     
     func search() {
         if searchBar.isFirstResponder {
             self.searchBar.resignFirstResponder()
+            let selectedDistance = DistanceSegment.selectedSegmentIndex
+            let distance: Int
+            
+            switch selectedDistance {
+            case 0:
+                distance = 8046
+            case 1:
+                distance = 16093
+            case 2:
+                distance = 32186
+            default:
+                distance = 16093
+            }
+            
+            let selectedPrice = PriceSegment.selectedSegmentIndex
+            let price: String
+            
+            switch selectedPrice {
+            case 1:
+                price = "1"
+            case 2:
+                price = "1,2"
+            case 3:
+                price = "1,2,3"
+            default:
+                price = "1"
+                
+            }
+            chosenPrice = price
+            chosenDistance = distance
         }
     }
     
@@ -118,7 +119,6 @@ class HomeScreen: UIViewController, CLLocationManagerDelegate {
             tinderVC.thePrice = chosenPrice 
         }
     }
-    
     
     
     @IBAction func enterButtonClicked(_ sender: Any) {
@@ -148,15 +148,8 @@ class HomeScreen: UIViewController, CLLocationManagerDelegate {
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
         tap.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tap)
-        
-        
     }
     
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
-    }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         UserLocation = locations[0].coordinate

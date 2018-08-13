@@ -55,11 +55,6 @@ class TinderScreen: UIViewController {
         removeCurrentRestaurant()
     }
     
-    
-    @IBAction func backButtonPressed(_ sender: Any) {
-        self.performSegue(withIdentifier: "unwindToHome", sender: self)
-    }
-    
     var currentlyVisibleRestaurant: Restaurant? {
         get {
             return restaurants.first
@@ -72,7 +67,6 @@ class TinderScreen: UIViewController {
         destination.likedRestarunts = storedRestaurants
         destination.pagetop = self.foodSearched
         }
-    
     
     
     func updateUI()  {
@@ -138,18 +132,14 @@ class TinderScreen: UIViewController {
             if restaurantsFromYelp.count != 0 {
                 self.restaurants = restaurantsFromYelp
                 self.updateUI()
-            } else {
-                
+            } else if restaurantsFromYelp.count == 0 {
+                self.dismiss(animated: true, completion: nil)
             }
             
         }
         YelpService.getRestarunts(foodToSearch: foodToSearch, theDistance: String(theDistance), thePrice: thePrice, completionHandler: myBlockOfCodeToCallWhenGetRestauntsIsDone)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     // updates Mainimage IBOutlet
     func loadImage(urlString: String) {
@@ -183,7 +173,7 @@ class TinderScreen: UIViewController {
         }
         return string
     }
-    
+
 }
 
 //swipeAction

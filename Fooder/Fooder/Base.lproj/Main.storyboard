@@ -78,17 +78,17 @@
                                         <rect key="frame" x="0.0" y="115" width="288" height="28"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Distance " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffQ-M5-IMq">
-                                                <rect key="frame" x="0.0" y="0.0" width="95.5" height="28"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="28"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="23"/>
                                                 <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="EYQ-GE-ffm">
-                                                <rect key="frame" x="95.5" y="0.0" width="192.5" height="29"/>
+                                                <rect key="frame" x="93.5" y="0.0" width="194.5" height="29"/>
                                                 <segments>
-                                                    <segment title="1 mile"/>
-                                                    <segment title="5 miles"/>
+                                                    <segment title="5 mile"/>
                                                     <segment title="10 miles"/>
+                                                    <segment title="20 miles"/>
                                                 </segments>
                                             </segmentedControl>
                                         </subviews>
