@@ -121,6 +121,7 @@
 		036006DE2110FA9A009BCE25 /* Yelp_trademark_RGB_outline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Yelp_trademark_RGB_outline.png; path = yelp/Yelp_trademark_RGB_outline.png; sourceTree = SOURCE_ROOT; };
 		036390C52108EDC800A4CFB6 /* restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = restaurant.swift; sourceTree = "<group>"; };
 		037959172121585A00FFC89C /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		0379591C21215BD400FFC89C /* IMG_0706.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0706.png; sourceTree = "<group>"; };
 		03A4DD63211E2B3F0043780A /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
 		03E52E192113A12D00BF9764 /* YelpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpService.swift; sourceTree = "<group>"; };
 		03E52E1F2114049F00BF9764 /* EndScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndScreen.swift; sourceTree = "<group>"; };
@@ -259,6 +260,7 @@
 				036006A32110F961009BCE25 /* regular_5.png */,
 				036006A62110F962009BCE25 /* regular_5@2x.png */,
 				036006A42110F961009BCE25 /* regular_5@3x.png */,
+				0379591C21215BD400FFC89C /* IMG_0706.png */,
 			);
 			path = Photos;
 			sourceTree = "<group>";
