@@ -194,7 +194,6 @@
 				0315086D2107BAA3001F0C1E /* LaunchScreen.storyboard */,
 				031508642107BAA3001F0C1E /* AppDelegate.swift */,
 				031508702107BAA3001F0C1E /* Info.plist */,
-				03A4DD63211E2B3F0043780A /* Fabric.framework */,
 			);
 			path = Fooder;
 			sourceTree = "<group>";
@@ -287,6 +286,7 @@
 		7D1551A7B4AD70B6DCFE9D9F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				03A4DD63211E2B3F0043780A /* Fabric.framework */,
 				037959172121585A00FFC89C /* Crashlytics.framework */,
 				0A01D9A95FA9363D6B71CC76 /* Pods_Fooder.framework */,
 			);
